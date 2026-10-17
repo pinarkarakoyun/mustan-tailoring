@@ -3,7 +3,11 @@
 import { Suspense, type ComponentProps } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
 
-type NavLinkProps = ComponentProps<typeof Link> & { href: string };
+type NavLinkProps = ComponentProps<typeof Link> & {
+  href: string;
+  /** Only highlight on this exact page, not on its sub-pages (e.g. "/admin" vs "/admin/orders"). */
+  exact?: boolean;
+};
 
 /** Menu link that is highlighted when it points to the current page. */
 export function NavLink(props: NavLinkProps) {
@@ -18,13 +22,17 @@ export function NavLink(props: NavLinkProps) {
 
 function ActiveNavLink(props: NavLinkProps) {
   const pathname = usePathname();
-  const isActive =
-    props.href === "/" ? pathname === "/" : pathname.startsWith(props.href);
+  const exact = props.exact ?? props.href === "/";
+  const isActive = exact
+    ? pathname === props.href
+    : pathname.startsWith(props.href);
   return <NavLinkView {...props} isActive={isActive} />;
 }
 
 function NavLinkView({
   isActive,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- only used by ActiveNavLink
+  exact,
   className = "",
   ...props
 }: NavLinkProps & { isActive: boolean }) {

@@ -1,5 +1,5 @@
 import { connection } from "next/server";
-import type { Order, StatusChange } from "@/types/order";
+import type { Order, OrderStatus, StatusChange } from "@/types/order";
 import { createSeedData } from "./mock-data";
 
 // THE single place for order data access.
@@ -28,4 +28,54 @@ export async function listOrders(): Promise<Order[]> {
   return structuredClone(store.orders).sort((a, b) =>
     b.createdAt.localeCompare(a.createdAt),
   );
+}
+
+export type OrderSearch = {
+  /** Free text: customer name, phone number or order number. */
+  query?: string;
+  status?: OrderStatus;
+};
+
+/** Orders matching the search, newest first. (With a database this becomes a SQL query.) */
+export async function searchOrders({
+  query = "",
+  status,
+}: OrderSearch): Promise<Order[]> {
+  const orders = await listOrders();
+  const text = normalizeText(query.trim());
+  // "06 1234 0005", "+31612340005" and "0612340005" should all find the same phone.
+  const digits = query.replace(/\D/g, "").replace(/^0+/, "");
+
+  return orders.filter((order) => {
+    if (status && order.status !== status) return false;
+    if (!text) return true;
+    return (
+      normalizeText(order.customerName).includes(text) ||
+      (digits.length > 0 && String(order.orderNumber).includes(digits)) ||
+      (digits.length >= 4 && order.customerPhone.replace(/\D/g, "").includes(digits))
+    );
+  });
+}
+
+/** Lowercase without accents, so "yilmaz" finds "Yılmaz" and "celik" finds "Çelik". */
+function normalizeText(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/ı/g, "i");
+}
+
+/** One order with its status history (oldest first), or null if it does not exist. */
+export async function getOrderWithHistory(
+  id: string,
+): Promise<{ order: Order; history: StatusChange[] } | null> {
+  const store = await getStore();
+  const order = store.orders.find((candidate) => candidate.id === id);
+  if (!order) return null;
+
+  const history = store.statusChanges
+    .filter((change) => change.orderId === id)
+    .sort((a, b) => a.changedAt.localeCompare(b.changedAt));
+  return structuredClone({ order, history });
 }

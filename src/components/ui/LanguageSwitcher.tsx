@@ -3,14 +3,8 @@
 import { Suspense } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import { routing, type Locale } from "@/i18n/routing";
-
-// Language names are always written in their own language, so they are not translated.
-const localeNames: Record<Locale, string> = {
-  nl: "Nederlands",
-  tr: "Türkçe",
-  en: "English",
-};
+import { localeNames } from "@/i18n/locale-names";
+import { routing } from "@/i18n/routing";
 
 export function LanguageSwitcher() {
   const t = useTranslations("LanguageSwitcher");

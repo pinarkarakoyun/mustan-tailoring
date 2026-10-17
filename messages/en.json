@@ -102,7 +102,9 @@
   },
   "Admin": {
     "panelName": "Admin",
-    "logout": "Log out"
+    "logout": "Log out",
+    "dashboard": "Overview",
+    "orders": "Orders"
   },
   "AdminLogin": {
     "title": "Log in",
@@ -137,5 +139,36 @@
     "service": "Service",
     "price": "Price",
     "estimatedReadyDate": "Ready date"
+  },
+  "Orders": {
+    "title": "Orders",
+    "searchLabel": "Search by name, phone or order number",
+    "search": "Search",
+    "clearSearch": "Clear search",
+    "filterLabel": "Filter by status",
+    "all": "All",
+    "resultCount": "{count, plural, =0 {No orders found.} one {# order} other {# orders}}"
+  },
+  "OrderDetail": {
+    "backToOrders": "All orders",
+    "customer": "Customer",
+    "name": "Name",
+    "phone": "Phone",
+    "call": "Call",
+    "language": "Customer's language",
+    "order": "Order",
+    "service": "Service",
+    "clothingType": "Garment",
+    "publicDescription": "Description (customer can see this)",
+    "internalNote": "Internal note (shop only)",
+    "price": "Price",
+    "estimatedReadyDate": "Ready date",
+    "createdAt": "Received on",
+    "notFilled": "Not filled in yet",
+    "missingTitle": "Still to complete",
+    "history": "Status history",
+    "loading": "Loading order…",
+    "notFoundTitle": "Order not found",
+    "notFoundText": "This order does not exist."
   }
 }

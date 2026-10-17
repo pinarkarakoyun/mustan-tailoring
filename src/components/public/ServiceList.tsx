@@ -24,10 +24,7 @@ export function ServiceList({ services, showPrices = false }: ServiceListProps) 
               {service.fromPriceCents === null
                 ? t("priceOnRequest")
                 : t("priceFrom", {
-                    price: format.number(service.fromPriceCents / 100, {
-                      style: "currency",
-                      currency: "EUR",
-                    }),
+                    price: format.number(service.fromPriceCents / 100, "price"),
                   })}
             </span>
           )}

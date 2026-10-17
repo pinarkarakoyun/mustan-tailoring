@@ -1,5 +1,6 @@
 import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { StatusBadge } from "@/components/ui/StatusBadge";
+import { Link } from "@/i18n/navigation";
 import {
   dateOnlyToDate,
   getDueState,
@@ -7,6 +8,8 @@ import {
 } from "@/lib/order-utils";
 import type { Order } from "@/types/order";
 import type { Service } from "@/types/service";
+import { DueBadge } from "./DueBadge";
+import { MissingFieldChips } from "./MissingFieldChips";
 
 type OrderCardProps = {
   order: Order;
@@ -16,6 +19,7 @@ type OrderCardProps = {
   showMissing?: boolean;
 };
 
+/** Order summary that opens the order detail page. */
 export function OrderCard({
   order,
   service,
@@ -23,65 +27,48 @@ export function OrderCard({
   showMissing = false,
 }: OrderCardProps) {
   const t = useTranslations("OrderCard");
-  const tMissing = useTranslations("MissingField");
   const format = useFormatter();
   const locale = useLocale();
 
-  const dueState = getDueState(order, today);
   const missing = showMissing ? getMissingFields(order) : [];
 
   return (
-    <article className="flex flex-col gap-2 rounded-xl border border-border bg-surface p-4">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <p className="text-lg font-bold">
+    <Link
+      href={`/admin/orders/${order.id}`}
+      className="flex flex-col gap-2 rounded-xl border border-border bg-surface p-4 hover:border-primary focus-visible:outline-4 focus-visible:outline-primary"
+    >
+      <span className="flex flex-wrap items-center justify-between gap-2">
+        <span className="text-lg font-bold">
           #{order.orderNumber} · {order.customerName}
-        </p>
+        </span>
         <StatusBadge status={order.status} />
-      </div>
+      </span>
 
-      <p className="text-muted">
+      <span className="text-muted">
         {service ? service.name[locale] : t("noService")}
         {order.clothingType && ` · ${order.clothingType}`}
-      </p>
+      </span>
 
-      <p className="flex flex-wrap items-center gap-2">
+      <span className="flex flex-wrap items-center gap-2">
         <span>
           {order.estimatedReadyDate
             ? t("readyBy", {
-                date: format.dateTime(dateOnlyToDate(order.estimatedReadyDate), {
-                  weekday: "short",
-                  day: "numeric",
-                  month: "long",
-                }),
+                date: format.dateTime(
+                  dateOnlyToDate(order.estimatedReadyDate),
+                  "dateLong",
+                ),
               })
             : t("noDate")}
         </span>
-        {dueState && (
-          <span
-            className={`rounded-full px-2 py-0.5 text-sm font-bold ${
-              dueState === "overdue"
-                ? "bg-red-700 text-white"
-                : "bg-amber-200 text-amber-950"
-            }`}
-          >
-            {t(dueState)}
-          </span>
-        )}
-      </p>
+        <DueBadge state={getDueState(order, today)} />
+      </span>
 
       {missing.length > 0 && (
-        <p className="flex flex-wrap items-center gap-2">
+        <span className="flex flex-wrap items-center gap-2">
           <span className="font-semibold">{t("missing")}</span>
-          {missing.map((field) => (
-            <span
-              key={field}
-              className="rounded-full border border-dashed border-muted px-2 py-0.5 text-sm"
-            >
-              {tMissing(field)}
-            </span>
-          ))}
-        </p>
+          <MissingFieldChips fields={missing} />
+        </span>
       )}
-    </article>
+    </Link>
   );
 }

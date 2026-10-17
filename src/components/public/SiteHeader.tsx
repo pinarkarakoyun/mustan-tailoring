@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { shop } from "@/lib/shop";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
-import { NavLink } from "./NavLink";
+import { NavLink } from "@/components/ui/NavLink";
 
 export function SiteHeader() {
   const t = useTranslations("Nav");

@@ -102,7 +102,9 @@
   },
   "Admin": {
     "panelName": "Beheer",
-    "logout": "Uitloggen"
+    "logout": "Uitloggen",
+    "dashboard": "Overzicht",
+    "orders": "Bestellingen"
   },
   "AdminLogin": {
     "title": "Inloggen",
@@ -137,5 +139,36 @@
     "service": "Dienst",
     "price": "Prijs",
     "estimatedReadyDate": "Klaar-datum"
+  },
+  "Orders": {
+    "title": "Bestellingen",
+    "searchLabel": "Zoek op naam, telefoon of bestelnummer",
+    "search": "Zoeken",
+    "clearSearch": "Wis zoekopdracht",
+    "filterLabel": "Filter op status",
+    "all": "Alle",
+    "resultCount": "{count, plural, =0 {Geen bestellingen gevonden.} one {# bestelling} other {# bestellingen}}"
+  },
+  "OrderDetail": {
+    "backToOrders": "Alle bestellingen",
+    "customer": "Klant",
+    "name": "Naam",
+    "phone": "Telefoon",
+    "call": "Bellen",
+    "language": "Taal van de klant",
+    "order": "Bestelling",
+    "service": "Dienst",
+    "clothingType": "Kledingstuk",
+    "publicDescription": "Omschrijving (ziet de klant)",
+    "internalNote": "Interne notitie (alleen voor de winkel)",
+    "price": "Prijs",
+    "estimatedReadyDate": "Klaar-datum",
+    "createdAt": "Aangenomen op",
+    "notFilled": "Nog niet ingevuld",
+    "missingTitle": "Nog aan te vullen",
+    "history": "Statusgeschiedenis",
+    "loading": "Bestelling laden…",
+    "notFoundTitle": "Bestelling niet gevonden",
+    "notFoundText": "Deze bestelling bestaat niet (meer)."
   }
 }
