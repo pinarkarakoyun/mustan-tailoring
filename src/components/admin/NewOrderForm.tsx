@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { localeNames } from "@/i18n/locale-names";
 import { routing } from "@/i18n/routing";
+import { LIMITS } from "@/lib/order-limits";
 
 const initialState: NewOrderState = {
   errors: {},
@@ -36,7 +37,7 @@ export function NewOrderForm() {
           name="name"
           autoComplete="off"
           autoFocus
-          maxLength={100}
+          maxLength={LIMITS.name}
           defaultValue={values.name}
           aria-invalid={errors.name ? true : undefined}
           aria-describedby={errors.name ? "name-error" : undefined}
@@ -54,7 +55,7 @@ export function NewOrderForm() {
           type="tel"
           inputMode="tel"
           autoComplete="off"
-          maxLength={30}
+          maxLength={LIMITS.phone}
           defaultValue={values.phone}
           aria-invalid={errors.phone ? true : undefined}
           aria-describedby={errors.phone ? "phone-error phone-hint" : "phone-hint"}

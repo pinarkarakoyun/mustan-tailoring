@@ -172,7 +172,14 @@
     "notFoundTitle": "Order not found",
     "notFoundText": "This order does not exist.",
     "createdTitle": "Order #{number} has been created",
-    "createdText": "Write this number on the receipt and on the garment's tag."
+    "createdText": "Write this number on the receipt and on the garment's tag.",
+    "edit": "Edit details",
+    "statusTitle": "Change status",
+    "otherStatus": "Choose another status",
+    "otherStatusHint": "Chose the wrong one by mistake? Set the status back here.",
+    "setStatus": "Set to: {status}",
+    "noticeSaved": "Changes saved.",
+    "noticeStatus": "Status changed to: {status}"
   },
   "NewOrder": {
     "title": "New order",
@@ -187,5 +194,34 @@
     "nameTooLong": "The name is too long (maximum 100 characters).",
     "phoneRequired": "Please enter the phone number.",
     "phoneInvalid": "This phone number is not valid. Please check it."
+  },
+  "StatusAction": {
+    "IN_PROGRESS": "Start the work",
+    "READY_FOR_PICKUP": "Ready for pickup",
+    "DELIVERED": "Picked up by customer"
+  },
+  "EditOrder": {
+    "title": "Edit order #{number}",
+    "intro": "Fill in what you know. You can complete empty fields later.",
+    "customer": "Customer",
+    "order": "Order",
+    "service": "Service",
+    "serviceNone": "Not chosen yet",
+    "clothingType": "Garment",
+    "clothingTypeHint": "For example trousers, jacket or dress.",
+    "publicDescription": "Description for the customer",
+    "publicDescriptionHint": "Short text the customer sees on the tracking page, for example \"Trouser hem\".",
+    "internalNote": "Internal note",
+    "internalNoteHint": "Shop only: measurements, agreements. The customer never sees this.",
+    "price": "Price in euros",
+    "priceHint": "For example 15 or 15.50.",
+    "estimatedReadyDate": "Ready date",
+    "save": "Save",
+    "saving": "Saving…",
+    "cancel": "Cancel",
+    "serviceInvalid": "Choose a service from the list.",
+    "tooLong": "This text is too long.",
+    "priceInvalid": "Enter a valid amount, for example 15.50.",
+    "dateInvalid": "Choose a valid date."
   }
 }

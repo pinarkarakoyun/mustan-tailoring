@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { getFormatter, getTranslations } from "next-intl/server";
 import { DueBadge } from "@/components/admin/DueBadge";
 import { MissingFieldChips } from "@/components/admin/MissingFieldChips";
+import { StatusControls } from "@/components/admin/StatusControls";
+import { ButtonLink } from "@/components/ui/ButtonLink";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { StatusTimeline } from "@/components/ui/StatusTimeline";
 import { localeNames } from "@/i18n/locale-names";
@@ -29,14 +31,15 @@ export default async function OrderDetailPage({ params, searchParams }: Props) {
   const locale = await initPageLocale(params);
   await requireAdmin();
   const { id } = await params;
-  // Set by the "new order" form after saving, to show a confirmation.
-  const justCreated = (await searchParams).created === "1";
+  // Set by the forms after saving, to show a confirmation ("created", "saved" or "status").
+  const { notice } = await searchParams;
 
   const result = await getOrderWithHistory(id);
   if (!result) notFound();
   const { order, history } = result;
 
   const t = await getTranslations("OrderDetail");
+  const tStatus = await getTranslations("Status");
   const format = await getFormatter();
   const service = (await getAllServices()).find(
     (candidate) => candidate.id === order.serviceId,
@@ -57,19 +60,28 @@ export default async function OrderDetailPage({ params, searchParams }: Props) {
         <p className="text-xl">{order.customerName}</p>
       </header>
 
-      {justCreated && (
-        <div role="status" className="flex flex-col gap-1 rounded-xl bg-green-100 p-4 text-green-950">
-          <p className="text-lg font-bold">
-            ✓ {t("createdTitle", { number: order.orderNumber })}
-          </p>
-          <p>{t("createdText")}</p>
-        </div>
+      {notice === "created" && (
+        <Notice title={t("createdTitle", { number: order.orderNumber })}>
+          {t("createdText")}
+        </Notice>
+      )}
+      {notice === "saved" && <Notice title={t("noticeSaved")} />}
+      {notice === "status" && (
+        <Notice title={t("noticeStatus", { status: tStatus(order.status) })} />
       )}
 
+      <section className="flex flex-col gap-3">
+        <h2 className="text-2xl font-bold">{t("statusTitle")}</h2>
+        <StatusControls orderId={order.id} status={order.status} />
+      </section>
+
       {missing.length > 0 && (
-        <div className="flex flex-col gap-2 rounded-xl border-2 border-dashed border-amber-500 bg-amber-50 p-4">
+        <div className="flex flex-col gap-3 rounded-xl border-2 border-dashed border-amber-500 bg-amber-50 p-4">
           <p className="font-semibold">{t("missingTitle")}</p>
           <MissingFieldChips fields={missing} />
+          <ButtonLink href={`/admin/orders/${order.id}/edit`} className="self-start">
+            {t("edit")}
+          </ButtonLink>
         </div>
       )}
 
@@ -116,10 +128,24 @@ export default async function OrderDetailPage({ params, searchParams }: Props) {
         </DetailRow>
       </DetailSection>
 
+      <ButtonLink href={`/admin/orders/${order.id}/edit`} variant="secondary">
+        {t("edit")}
+      </ButtonLink>
+
       <section className="flex flex-col gap-4">
         <h2 className="text-2xl font-bold">{t("history")}</h2>
         <StatusTimeline entries={history} />
       </section>
+    </div>
+  );
+}
+
+/** Green confirmation box shown after saving. */
+function Notice({ title, children }: { title: string; children?: ReactNode }) {
+  return (
+    <div role="status" className="flex flex-col gap-1 rounded-xl bg-green-100 p-4 text-green-950">
+      <p className="text-lg font-bold">✓ {title}</p>
+      {children && <p>{children}</p>}
     </div>
   );
 }

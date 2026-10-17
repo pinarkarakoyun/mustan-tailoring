@@ -15,6 +15,23 @@ export function dateOnlyToDate(dateOnly: string): Date {
   return new Date(`${dateOnly}T12:00:00Z`);
 }
 
+/** Statuses that can be a "next step" (each has its own button text). */
+export type NextStatus = "IN_PROGRESS" | "READY_FOR_PICKUP" | "DELIVERED";
+
+/** The usual next step in the workflow, or null when the order is finished. */
+export function getNextStatus(status: OrderStatus): NextStatus | null {
+  switch (status) {
+    case "RECEIVED":
+      return "IN_PROGRESS";
+    case "IN_PROGRESS":
+      return "READY_FOR_PICKUP";
+    case "READY_FOR_PICKUP":
+      return "DELIVERED";
+    default:
+      return null;
+  }
+}
+
 /** Orders that are still being worked on (not ready, picked up or cancelled). */
 export function isOpen(status: OrderStatus): boolean {
   return status === "RECEIVED" || status === "IN_PROGRESS";

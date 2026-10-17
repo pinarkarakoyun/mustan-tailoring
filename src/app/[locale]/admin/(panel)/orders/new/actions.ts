@@ -1,15 +1,15 @@
 "use server";
 
-import { hasLocale } from "next-intl";
 import { getLocale } from "next-intl/server";
 import { redirect } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
 import { requireAdmin } from "@/lib/auth";
 import { createOrder } from "@/lib/orders";
-import { normalizePhone } from "@/lib/phone";
-
-const MAX_NAME_LENGTH = 100;
-const MAX_PHONE_LENGTH = 30;
+import {
+  parseLanguage,
+  readText,
+  validateName,
+  validatePhone,
+} from "@/lib/order-validation";
 
 export type NewOrderState = {
   errors: {
@@ -27,34 +27,27 @@ export async function createOrderAction(
   // Server Actions are public endpoints: always check the login again here.
   await requireAdmin();
 
-  const name = String(formData.get("name") ?? "").trim();
-  const phoneInput = String(formData.get("phone") ?? "").trim();
-  const languageInput = String(formData.get("language") ?? "");
+  const values = {
+    name: readText(formData, "name"),
+    phone: readText(formData, "phone"),
+    language: readText(formData, "language"),
+  };
+  const name = validateName(values.name);
+  const phone = validatePhone(values.phone);
 
-  const errors: NewOrderState["errors"] = {};
-  if (!name) errors.name = "nameRequired";
-  else if (name.length > MAX_NAME_LENGTH) errors.name = "nameTooLong";
-
-  const phone = phoneInput.length <= MAX_PHONE_LENGTH ? normalizePhone(phoneInput) : null;
-  if (!phoneInput) errors.phone = "phoneRequired";
-  else if (!phone) errors.phone = "phoneInvalid";
-
-  if (errors.name || errors.phone || !phone) {
-    return { errors, values: { name, phone: phoneInput, language: languageInput } };
+  if (name.error !== undefined || phone.error !== undefined) {
+    return { errors: { name: name.error, phone: phone.error }, values };
   }
 
   const order = await createOrder({
-    customerName: name,
-    customerPhone: phone,
-    // Unknown values fall back to Dutch instead of failing.
-    customerLanguage: hasLocale(routing.locales, languageInput)
-      ? languageInput
-      : routing.defaultLocale,
+    customerName: name.value,
+    customerPhone: phone.value,
+    customerLanguage: parseLanguage(values.language),
   });
 
   redirect({
-    href: { pathname: `/admin/orders/${order.id}`, query: { created: "1" } },
+    href: { pathname: `/admin/orders/${order.id}`, query: { notice: "created" } },
     locale: await getLocale(),
   });
-  return { errors: {}, values: { name: "", phone: "", language: "" } };
+  return { errors: {}, values };
 }

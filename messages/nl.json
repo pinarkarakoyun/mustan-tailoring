@@ -172,7 +172,14 @@
     "notFoundTitle": "Bestelling niet gevonden",
     "notFoundText": "Deze bestelling bestaat niet (meer).",
     "createdTitle": "Bestelling #{number} is aangemaakt",
-    "createdText": "Schrijf dit nummer op de bon en op het label van het kledingstuk."
+    "createdText": "Schrijf dit nummer op de bon en op het label van het kledingstuk.",
+    "edit": "Gegevens bewerken",
+    "statusTitle": "Status wijzigen",
+    "otherStatus": "Andere status kiezen",
+    "otherStatusHint": "Per ongeluk verkeerd gekozen? Zet de status hier terug.",
+    "setStatus": "Zet op: {status}",
+    "noticeSaved": "Wijzigingen opgeslagen.",
+    "noticeStatus": "Status gewijzigd naar: {status}"
   },
   "NewOrder": {
     "title": "Nieuwe bestelling",
@@ -187,5 +194,34 @@
     "nameTooLong": "De naam is te lang (maximaal 100 tekens).",
     "phoneRequired": "Vul het telefoonnummer in.",
     "phoneInvalid": "Dit telefoonnummer klopt niet. Controleer het nummer."
+  },
+  "StatusAction": {
+    "IN_PROGRESS": "Begin met het werk",
+    "READY_FOR_PICKUP": "Klaar om op te halen",
+    "DELIVERED": "Opgehaald door klant"
+  },
+  "EditOrder": {
+    "title": "Bestelling #{number} bewerken",
+    "intro": "Vul in wat u weet. Lege velden kunt u later invullen.",
+    "customer": "Klant",
+    "order": "Bestelling",
+    "service": "Dienst",
+    "serviceNone": "Nog niet gekozen",
+    "clothingType": "Kledingstuk",
+    "clothingTypeHint": "Bijvoorbeeld broek, jas of jurk.",
+    "publicDescription": "Omschrijving voor de klant",
+    "publicDescriptionHint": "Korte tekst die de klant op de volgpagina ziet, bijvoorbeeld \"Broek inkorten\".",
+    "internalNote": "Interne notitie",
+    "internalNoteHint": "Alleen voor de winkel: maten, afspraken. De klant ziet dit nooit.",
+    "price": "Prijs in euro",
+    "priceHint": "Bijvoorbeeld 15 of 15,50.",
+    "estimatedReadyDate": "Klaar-datum",
+    "save": "Opslaan",
+    "saving": "Bezig met opslaan…",
+    "cancel": "Annuleren",
+    "serviceInvalid": "Kies een dienst uit de lijst.",
+    "tooLong": "Deze tekst is te lang.",
+    "priceInvalid": "Vul een geldig bedrag in, bijvoorbeeld 15,50.",
+    "dateInvalid": "Kies een geldige datum."
   }
 }

@@ -125,3 +125,51 @@ export async function createOrder(input: NewOrderInput): Promise<Order> {
   });
   return structuredClone(order);
 }
+
+/** Fields the owner can change on the edit page (status has its own function). */
+export type OrderUpdate = Pick<
+  Order,
+  | "customerName"
+  | "customerPhone"
+  | "customerLanguage"
+  | "serviceId"
+  | "clothingType"
+  | "publicDescription"
+  | "internalNote"
+  | "priceCents"
+  | "estimatedReadyDate"
+>;
+
+/** Saves edited fields. Input must already be validated. Returns null if the order does not exist. */
+export async function updateOrder(
+  id: string,
+  update: OrderUpdate,
+): Promise<Order | null> {
+  const store = await getStore();
+  const order = store.orders.find((candidate) => candidate.id === id);
+  if (!order) return null;
+
+  Object.assign(order, update, { updatedAt: new Date().toISOString() });
+  return structuredClone(order);
+}
+
+/**
+ * Changes the status and records it in the history.
+ * Setting the same status again does nothing (e.g. after a double click).
+ */
+export async function changeOrderStatus(
+  id: string,
+  status: OrderStatus,
+): Promise<Order | null> {
+  const store = await getStore();
+  const order = store.orders.find((candidate) => candidate.id === id);
+  if (!order) return null;
+  if (order.status === status) return structuredClone(order);
+
+  const now = new Date().toISOString();
+  // With a database, these two writes would happen in one transaction.
+  order.status = status;
+  order.updatedAt = now;
+  store.statusChanges.push({ id: randomUUID(), orderId: id, status, changedAt: now });
+  return structuredClone(order);
+}

@@ -172,7 +172,14 @@
     "notFoundTitle": "Sipariş bulunamadı",
     "notFoundText": "Bu sipariş mevcut değil.",
     "createdTitle": "Sipariş #{number} oluşturuldu",
-    "createdText": "Bu numarayı fişe ve kıyafetin etiketine yazın."
+    "createdText": "Bu numarayı fişe ve kıyafetin etiketine yazın.",
+    "edit": "Bilgileri düzenle",
+    "statusTitle": "Durumu değiştir",
+    "otherStatus": "Başka bir durum seç",
+    "otherStatusHint": "Yanlışlıkla mı seçtiniz? Durumu buradan geri alın.",
+    "setStatus": "Şuna çevir: {status}",
+    "noticeSaved": "Değişiklikler kaydedildi.",
+    "noticeStatus": "Durum değiştirildi: {status}"
   },
   "NewOrder": {
     "title": "Yeni sipariş",
@@ -187,5 +194,34 @@
     "nameTooLong": "İsim çok uzun (en fazla 100 karakter).",
     "phoneRequired": "Telefon numarasını girin.",
     "phoneInvalid": "Bu telefon numarası geçersiz. Numarayı kontrol edin."
+  },
+  "StatusAction": {
+    "IN_PROGRESS": "İşe başla",
+    "READY_FOR_PICKUP": "Teslime hazır",
+    "DELIVERED": "Müşteri teslim aldı"
+  },
+  "EditOrder": {
+    "title": "Sipariş #{number} düzenle",
+    "intro": "Bildiklerinizi doldurun. Boş alanları sonra doldurabilirsiniz.",
+    "customer": "Müşteri",
+    "order": "Sipariş",
+    "service": "Hizmet",
+    "serviceNone": "Henüz seçilmedi",
+    "clothingType": "Kıyafet",
+    "clothingTypeHint": "Örneğin pantolon, ceket veya elbise.",
+    "publicDescription": "Müşteri için açıklama",
+    "publicDescriptionHint": "Müşterinin takip sayfasında göreceği kısa metin, örneğin \"Paça kısaltma\".",
+    "internalNote": "İç not",
+    "internalNoteHint": "Sadece dükkân için: ölçüler, anlaşmalar. Müşteri bunu asla görmez.",
+    "price": "Fiyat (euro)",
+    "priceHint": "Örneğin 15 veya 15,50.",
+    "estimatedReadyDate": "Teslim tarihi",
+    "save": "Kaydet",
+    "saving": "Kaydediliyor…",
+    "cancel": "Vazgeç",
+    "serviceInvalid": "Listeden bir hizmet seçin.",
+    "tooLong": "Bu metin çok uzun.",
+    "priceInvalid": "Geçerli bir tutar girin, örneğin 15,50.",
+    "dateInvalid": "Geçerli bir tarih seçin."
   }
 }
