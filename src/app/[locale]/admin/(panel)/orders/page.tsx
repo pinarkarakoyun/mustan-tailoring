@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
+import { NewOrderButton } from "@/components/admin/NewOrderButton";
 import { OrderCard } from "@/components/admin/OrderCard";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
@@ -34,7 +35,10 @@ export default async function OrdersPage({
 
   return (
     <>
-      <h1 className="mb-6 text-3xl font-bold">{t("title")}</h1>
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <h1 className="text-3xl font-bold">{t("title")}</h1>
+        <NewOrderButton />
+      </div>
       {/* The search terms come from the URL (?q=...&status=...), only known at request time. */}
       <Suspense fallback={<p className="text-lg text-muted">{tDashboard("loading")}</p>}>
         <OrdersContent searchParams={searchParams} />

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Suspense } from "react";
 import { getTranslations } from "next-intl/server";
+import { NewOrderButton } from "@/components/admin/NewOrderButton";
 import { OrderCard } from "@/components/admin/OrderCard";
 import { initPageLocale } from "@/i18n/page-locale";
 import { requireAdmin } from "@/lib/auth";
@@ -34,7 +35,10 @@ export default async function DashboardPage({
 
   return (
     <>
-      <h1 className="mb-6 text-3xl font-bold">{t("title")}</h1>
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <h1 className="text-3xl font-bold">{t("title")}</h1>
+        <NewOrderButton />
+      </div>
       {/* Orders are read at request time (login cookie + live data), so they stream in. */}
       <Suspense fallback={<p className="text-lg text-muted">{t("loading")}</p>}>
         <DashboardContent />

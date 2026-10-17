@@ -16,6 +16,7 @@ import {
   todayInShop,
 } from "@/lib/order-utils";
 import { getOrderWithHistory } from "@/lib/orders";
+import { formatPhone } from "@/lib/phone";
 import { getAllServices } from "@/lib/services";
 
 type Props = PageProps<"/[locale]/admin/orders/[id]">;
@@ -24,10 +25,12 @@ type Props = PageProps<"/[locale]/admin/orders/[id]">;
 // at request time and would block the whole page. The default site title is used instead.
 
 // The order id is only known at request time; loading.tsx shows a placeholder meanwhile.
-export default async function OrderDetailPage({ params }: Props) {
+export default async function OrderDetailPage({ params, searchParams }: Props) {
   const locale = await initPageLocale(params);
   await requireAdmin();
   const { id } = await params;
+  // Set by the "new order" form after saving, to show a confirmation.
+  const justCreated = (await searchParams).created === "1";
 
   const result = await getOrderWithHistory(id);
   if (!result) notFound();
@@ -54,6 +57,15 @@ export default async function OrderDetailPage({ params }: Props) {
         <p className="text-xl">{order.customerName}</p>
       </header>
 
+      {justCreated && (
+        <div role="status" className="flex flex-col gap-1 rounded-xl bg-green-100 p-4 text-green-950">
+          <p className="text-lg font-bold">
+            ✓ {t("createdTitle", { number: order.orderNumber })}
+          </p>
+          <p>{t("createdText")}</p>
+        </div>
+      )}
+
       {missing.length > 0 && (
         <div className="flex flex-col gap-2 rounded-xl border-2 border-dashed border-amber-500 bg-amber-50 p-4">
           <p className="font-semibold">{t("missingTitle")}</p>
@@ -65,7 +77,7 @@ export default async function OrderDetailPage({ params }: Props) {
         <DetailRow label={t("name")}>{order.customerName}</DetailRow>
         <DetailRow label={t("phone")}>
           <a href={`tel:${order.customerPhone}`} className="font-medium underline">
-            {order.customerPhone}
+            {formatPhone(order.customerPhone)}
           </a>
         </DetailRow>
         <DetailRow label={t("language")}>{localeNames[order.customerLanguage]}</DetailRow>

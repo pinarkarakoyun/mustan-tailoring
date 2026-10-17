@@ -1,6 +1,9 @@
+import { randomUUID } from "node:crypto";
 import { connection } from "next/server";
+import type { Locale } from "@/i18n/routing";
 import type { Order, OrderStatus, StatusChange } from "@/types/order";
 import { createSeedData } from "./mock-data";
+import { generateTrackingToken } from "./token";
 
 // THE single place for order data access.
 // Prototype: data lives in server memory and resets when the server restarts.
@@ -78,4 +81,47 @@ export async function getOrderWithHistory(
     .filter((change) => change.orderId === id)
     .sort((a, b) => a.changedAt.localeCompare(b.changedAt));
   return structuredClone({ order, history });
+}
+
+export type NewOrderInput = {
+  customerName: string;
+  /** Already validated and normalized (E.164). */
+  customerPhone: string;
+  customerLanguage: Locale;
+};
+
+/** Creates an order with only the required fields. Everything else can be added later. */
+export async function createOrder(input: NewOrderInput): Promise<Order> {
+  const store = await getStore();
+  const now = new Date().toISOString();
+  // With a database, the number would come from a sequence to avoid duplicates.
+  const lastNumber = Math.max(0, ...store.orders.map((order) => order.orderNumber));
+
+  const order: Order = {
+    id: randomUUID(),
+    orderNumber: lastNumber + 1,
+    trackingToken: generateTrackingToken(),
+    customerName: input.customerName,
+    customerPhone: input.customerPhone,
+    customerLanguage: input.customerLanguage,
+    serviceId: null,
+    clothingType: null,
+    publicDescription: null,
+    internalNote: null,
+    priceCents: null,
+    estimatedReadyDate: null,
+    status: "RECEIVED",
+    createdAt: now,
+    updatedAt: now,
+  };
+
+  store.orders.push(order);
+  // The first history entry: every order starts as RECEIVED.
+  store.statusChanges.push({
+    id: randomUUID(),
+    orderId: order.id,
+    status: "RECEIVED",
+    changedAt: now,
+  });
+  return structuredClone(order);
 }

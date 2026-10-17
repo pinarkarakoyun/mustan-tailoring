@@ -104,7 +104,8 @@
     "panelName": "Beheer",
     "logout": "Uitloggen",
     "dashboard": "Overzicht",
-    "orders": "Bestellingen"
+    "orders": "Bestellingen",
+    "newOrder": "Nieuwe bestelling"
   },
   "AdminLogin": {
     "title": "Inloggen",
@@ -169,6 +170,22 @@
     "history": "Statusgeschiedenis",
     "loading": "Bestelling laden…",
     "notFoundTitle": "Bestelling niet gevonden",
-    "notFoundText": "Deze bestelling bestaat niet (meer)."
+    "notFoundText": "Deze bestelling bestaat niet (meer).",
+    "createdTitle": "Bestelling #{number} is aangemaakt",
+    "createdText": "Schrijf dit nummer op de bon en op het label van het kledingstuk."
+  },
+  "NewOrder": {
+    "title": "Nieuwe bestelling",
+    "intro": "Alleen naam en telefoonnummer zijn nodig. De rest kunt u later invullen.",
+    "name": "Naam van de klant",
+    "phone": "Telefoonnummer",
+    "phoneHint": "Bijvoorbeeld 06 12345678 of 0532 123 45 67",
+    "language": "Taal voor berichten aan de klant",
+    "submit": "Bestelling aanmaken",
+    "submitting": "Bezig met opslaan…",
+    "nameRequired": "Vul de naam in.",
+    "nameTooLong": "De naam is te lang (maximaal 100 tekens).",
+    "phoneRequired": "Vul het telefoonnummer in.",
+    "phoneInvalid": "Dit telefoonnummer klopt niet. Controleer het nummer."
   }
 }

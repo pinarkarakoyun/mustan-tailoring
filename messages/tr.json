@@ -104,7 +104,8 @@
     "panelName": "Yönetim",
     "logout": "Çıkış yap",
     "dashboard": "Genel bakış",
-    "orders": "Siparişler"
+    "orders": "Siparişler",
+    "newOrder": "Yeni sipariş"
   },
   "AdminLogin": {
     "title": "Giriş",
@@ -169,6 +170,22 @@
     "history": "Durum geçmişi",
     "loading": "Sipariş yükleniyor…",
     "notFoundTitle": "Sipariş bulunamadı",
-    "notFoundText": "Bu sipariş mevcut değil."
+    "notFoundText": "Bu sipariş mevcut değil.",
+    "createdTitle": "Sipariş #{number} oluşturuldu",
+    "createdText": "Bu numarayı fişe ve kıyafetin etiketine yazın."
+  },
+  "NewOrder": {
+    "title": "Yeni sipariş",
+    "intro": "Sadece isim ve telefon numarası gerekli. Gerisini sonra doldurabilirsiniz.",
+    "name": "Müşterinin adı",
+    "phone": "Telefon numarası",
+    "phoneHint": "Örneğin 06 12345678 veya 0532 123 45 67",
+    "language": "Müşteriye gidecek mesajların dili",
+    "submit": "Siparişi oluştur",
+    "submitting": "Kaydediliyor…",
+    "nameRequired": "İsmi girin.",
+    "nameTooLong": "İsim çok uzun (en fazla 100 karakter).",
+    "phoneRequired": "Telefon numarasını girin.",
+    "phoneInvalid": "Bu telefon numarası geçersiz. Numarayı kontrol edin."
   }
 }

@@ -104,7 +104,8 @@
     "panelName": "Admin",
     "logout": "Log out",
     "dashboard": "Overview",
-    "orders": "Orders"
+    "orders": "Orders",
+    "newOrder": "New order"
   },
   "AdminLogin": {
     "title": "Log in",
@@ -169,6 +170,22 @@
     "history": "Status history",
     "loading": "Loading order…",
     "notFoundTitle": "Order not found",
-    "notFoundText": "This order does not exist."
+    "notFoundText": "This order does not exist.",
+    "createdTitle": "Order #{number} has been created",
+    "createdText": "Write this number on the receipt and on the garment's tag."
+  },
+  "NewOrder": {
+    "title": "New order",
+    "intro": "Only name and phone number are needed. You can fill in the rest later.",
+    "name": "Customer name",
+    "phone": "Phone number",
+    "phoneHint": "For example 06 12345678 or 0532 123 45 67",
+    "language": "Language for messages to the customer",
+    "submit": "Create order",
+    "submitting": "Saving…",
+    "nameRequired": "Please enter the name.",
+    "nameTooLong": "The name is too long (maximum 100 characters).",
+    "phoneRequired": "Please enter the phone number.",
+    "phoneInvalid": "This phone number is not valid. Please check it."
   }
 }
