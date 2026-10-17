@@ -185,7 +185,12 @@
     "qrAlt": "QR code for order #{number}",
     "openTracking": "Open tracking page",
     "copyLink": "Copy link",
-    "copied": "Link copied"
+    "copied": "Link copied",
+    "whatsappTitle": "Message to the customer",
+    "whatsappReady": "Send 'ready' message via WhatsApp",
+    "whatsappTracking": "Send tracking link via WhatsApp",
+    "whatsappHint": "WhatsApp opens with this message in the customer's language. You only need to press send.",
+    "whatsappPreview": "Message preview"
   },
   "NewOrder": {
     "title": "New order",
@@ -246,5 +251,9 @@
     "pickupTitle": "Pick up",
     "pickupText": "Bring your receipt or order number to the shop.",
     "privacyNote": "This page can only be seen with your personal link. Please do not share the link."
+  },
+  "WhatsAppMessage": {
+    "ready": "Hello {name}, good news: your order #{number} is ready! You can pick it up at {shop}, {address}.\n\nView your order: {link}\n\nKind regards,\n{shop}",
+    "tracking": "Hello {name}, thank you for your order #{number} at {shop}. You can follow its progress with this link:\n{link}\n\nKind regards,\n{shop}"
   }
 }

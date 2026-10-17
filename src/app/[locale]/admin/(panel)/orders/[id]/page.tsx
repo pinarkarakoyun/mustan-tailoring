@@ -5,6 +5,7 @@ import { DueBadge } from "@/components/admin/DueBadge";
 import { MissingFieldChips } from "@/components/admin/MissingFieldChips";
 import { StatusControls } from "@/components/admin/StatusControls";
 import { TrackingCard } from "@/components/admin/TrackingCard";
+import { WhatsAppCard } from "@/components/admin/WhatsAppCard";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { StatusTimeline } from "@/components/ui/StatusTimeline";
@@ -75,6 +76,8 @@ export default async function OrderDetailPage({ params, searchParams }: Props) {
         <h2 className="text-2xl font-bold">{t("statusTitle")}</h2>
         <StatusControls orderId={order.id} status={order.status} />
       </section>
+
+      <WhatsAppCard order={order} />
 
       <TrackingCard
         orderNumber={order.orderNumber}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
+import { getClientMessages, PUBLIC_CLIENT_NAMESPACES } from "@/i18n/client-messages";
 import { initPageLocale } from "@/i18n/page-locale";
 import { routing } from "@/i18n/routing";
 import { shop } from "@/lib/shop";
@@ -41,8 +42,10 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${geistSans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
-        {/* Makes translations available in client components ("use client"). */}
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        {/* Makes translations available in client components ("use client"), only the public ones. */}
+        <NextIntlClientProvider messages={await getClientMessages(PUBLIC_CLIENT_NAMESPACES)}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

@@ -185,7 +185,12 @@
     "qrAlt": "QR-code voor bestelling #{number}",
     "openTracking": "Volgpagina openen",
     "copyLink": "Link kopiëren",
-    "copied": "Link gekopieerd"
+    "copied": "Link gekopieerd",
+    "whatsappTitle": "Bericht aan de klant",
+    "whatsappReady": "Stuur 'klaar'-bericht via WhatsApp",
+    "whatsappTracking": "Stuur volglink via WhatsApp",
+    "whatsappHint": "WhatsApp opent met dit bericht in de taal van de klant. U hoeft alleen op verzenden te drukken.",
+    "whatsappPreview": "Voorbeeld van het bericht"
   },
   "NewOrder": {
     "title": "Nieuwe bestelling",
@@ -246,5 +251,9 @@
     "pickupTitle": "Ophalen",
     "pickupText": "Neem uw bon of bestelnummer mee naar de winkel.",
     "privacyNote": "Deze pagina is alleen te zien met uw persoonlijke link. Deel de link niet met anderen."
+  },
+  "WhatsAppMessage": {
+    "ready": "Hallo {name}, goed nieuws: uw bestelling #{number} is klaar! U kunt het ophalen bij {shop}, {address}.\n\nBekijk uw bestelling: {link}\n\nMet vriendelijke groet,\n{shop}",
+    "tracking": "Hallo {name}, bedankt voor uw bestelling #{number} bij {shop}. Via deze link kunt u zien hoe het ervoor staat:\n{link}\n\nMet vriendelijke groet,\n{shop}"
   }
 }

@@ -1,12 +1,14 @@
 import type { ComponentProps } from "react";
 
-export type ButtonVariant = "primary" | "secondary";
+export type ButtonVariant = "primary" | "secondary" | "success";
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
     "bg-primary text-primary-foreground hover:bg-primary-hover active:bg-primary-hover",
   secondary:
     "border-2 border-primary bg-surface text-primary hover:bg-background",
+  /** Green, for the "ready, tell the customer" action. */
+  success: "bg-green-700 text-white hover:bg-green-800 active:bg-green-800",
 };
 
 /**
@@ -14,7 +16,7 @@ const variantClasses: Record<ButtonVariant, string> = {
  * Shared by <Button> and <ButtonLink> so both always look the same.
  */
 export function buttonClasses(variant: ButtonVariant = "primary"): string {
-  return `inline-flex min-h-14 items-center justify-center rounded-xl px-6 text-center text-lg font-semibold transition-colors focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-50 ${variantClasses[variant]}`;
+  return `inline-flex min-h-14 items-center justify-center rounded-xl px-6 py-2 text-center text-lg leading-snug font-semibold transition-colors focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-50 ${variantClasses[variant]}`;
 }
 
 type ButtonProps = ComponentProps<"button"> & {

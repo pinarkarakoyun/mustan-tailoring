@@ -185,7 +185,12 @@
     "qrAlt": "Sipariş #{number} için QR kod",
     "openTracking": "Takip sayfasını aç",
     "copyLink": "Linki kopyala",
-    "copied": "Link kopyalandı"
+    "copied": "Link kopyalandı",
+    "whatsappTitle": "Müşteriye mesaj",
+    "whatsappReady": "WhatsApp'tan 'hazır' mesajı gönder",
+    "whatsappTracking": "WhatsApp'tan takip linki gönder",
+    "whatsappHint": "WhatsApp bu mesajla, müşterinin dilinde açılır. Sadece gönder'e basmanız yeterli.",
+    "whatsappPreview": "Mesajın önizlemesi"
   },
   "NewOrder": {
     "title": "Yeni sipariş",
@@ -246,5 +251,9 @@
     "pickupTitle": "Teslim alma",
     "pickupText": "Fişinizi veya sipariş numaranızı dükkâna getirin.",
     "privacyNote": "Bu sayfa sadece size özel linkle görülebilir. Linki başkalarıyla paylaşmayın."
+  },
+  "WhatsAppMessage": {
+    "ready": "Merhaba {name}, güzel haber: #{number} numaralı siparişiniz hazır! {shop} dükkânından teslim alabilirsiniz: {address}.\n\nSiparişinizi görün: {link}\n\nSaygılarımızla,\n{shop}",
+    "tracking": "Merhaba {name}, {shop} dükkânına verdiğiniz #{number} numaralı sipariş için teşekkür ederiz. Siparişinizin durumunu bu linkten görebilirsiniz:\n{link}\n\nSaygılarımızla,\n{shop}"
   }
 }
