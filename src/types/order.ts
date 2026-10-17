@@ -56,3 +56,19 @@ export type StatusChange = {
 
 /** Optional fields that are important but may be missing on quickly created orders. */
 export type MissingField = "service" | "price" | "estimatedReadyDate";
+
+/**
+ * The ONLY order data that may be shown on the public tracking page (PRD §8).
+ * No phone number, last name, internal note or price.
+ */
+export type PublicOrder = {
+  orderNumber: number;
+  /** First name only. */
+  firstName: string;
+  serviceId: string | null;
+  publicDescription: string | null;
+  status: OrderStatus;
+  estimatedReadyDate: string | null;
+  /** Status history without internal ids. */
+  timeline: { status: OrderStatus; changedAt: string }[];
+};

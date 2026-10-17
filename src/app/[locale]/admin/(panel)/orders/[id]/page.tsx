@@ -4,6 +4,7 @@ import { getFormatter, getTranslations } from "next-intl/server";
 import { DueBadge } from "@/components/admin/DueBadge";
 import { MissingFieldChips } from "@/components/admin/MissingFieldChips";
 import { StatusControls } from "@/components/admin/StatusControls";
+import { TrackingCard } from "@/components/admin/TrackingCard";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { StatusTimeline } from "@/components/ui/StatusTimeline";
@@ -74,6 +75,12 @@ export default async function OrderDetailPage({ params, searchParams }: Props) {
         <h2 className="text-2xl font-bold">{t("statusTitle")}</h2>
         <StatusControls orderId={order.id} status={order.status} />
       </section>
+
+      <TrackingCard
+        orderNumber={order.orderNumber}
+        trackingToken={order.trackingToken}
+        customerLanguage={order.customerLanguage}
+      />
 
       {missing.length > 0 && (
         <div className="flex flex-col gap-3 rounded-xl border-2 border-dashed border-amber-500 bg-amber-50 p-4">

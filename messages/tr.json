@@ -179,7 +179,13 @@
     "otherStatusHint": "Yanlışlıkla mı seçtiniz? Durumu buradan geri alın.",
     "setStatus": "Şuna çevir: {status}",
     "noticeSaved": "Değişiklikler kaydedildi.",
-    "noticeStatus": "Durum değiştirildi: {status}"
+    "noticeStatus": "Durum değiştirildi: {status}",
+    "trackingTitle": "Müşteri takibi",
+    "trackingText": "Müşteri bu QR kodu okutabilir veya linki açabilir. Müşteri sadece adını, sipariş numarasını, açıklamayı ve durumu görür.",
+    "qrAlt": "Sipariş #{number} için QR kod",
+    "openTracking": "Takip sayfasını aç",
+    "copyLink": "Linki kopyala",
+    "copied": "Link kopyalandı"
   },
   "NewOrder": {
     "title": "Yeni sipariş",
@@ -223,5 +229,22 @@
     "tooLong": "Bu metin çok uzun.",
     "priceInvalid": "Geçerli bir tutar girin, örneğin 15,50.",
     "dateInvalid": "Geçerli bir tarih seçin."
+  },
+  "Tracking": {
+    "title": "Siparişiniz",
+    "orderNumber": "Sipariş #{number}",
+    "greeting": "Merhaba {name},",
+    "currentStatus": "Durum",
+    "RECEIVED": "Kıyafetinizi teslim aldık. Yakında üzerinde çalışmaya başlayacağız.",
+    "IN_PROGRESS": "Kıyafetiniz üzerinde çalışıyoruz.",
+    "READY_FOR_PICKUP": "Kıyafetiniz hazır! Dükkândan teslim alabilirsiniz.",
+    "DELIVERED": "Kıyafetinizi teslim aldınız. Teşekkür ederiz!",
+    "CANCELLED": "Bu sipariş iptal edildi. Sorunuz varsa bize ulaşın.",
+    "expectedReady": "Tahmini teslim",
+    "work": "Yapılan iş",
+    "timeline": "Süreç",
+    "pickupTitle": "Teslim alma",
+    "pickupText": "Fişinizi veya sipariş numaranızı dükkâna getirin.",
+    "privacyNote": "Bu sayfa sadece size özel linkle görülebilir. Linki başkalarıyla paylaşmayın."
   }
 }

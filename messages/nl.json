@@ -179,7 +179,13 @@
     "otherStatusHint": "Per ongeluk verkeerd gekozen? Zet de status hier terug.",
     "setStatus": "Zet op: {status}",
     "noticeSaved": "Wijzigingen opgeslagen.",
-    "noticeStatus": "Status gewijzigd naar: {status}"
+    "noticeStatus": "Status gewijzigd naar: {status}",
+    "trackingTitle": "Volgen door de klant",
+    "trackingText": "De klant kan deze QR-code scannen of de link openen. De klant ziet alleen voornaam, bestelnummer, omschrijving en status.",
+    "qrAlt": "QR-code voor bestelling #{number}",
+    "openTracking": "Volgpagina openen",
+    "copyLink": "Link kopiëren",
+    "copied": "Link gekopieerd"
   },
   "NewOrder": {
     "title": "Nieuwe bestelling",
@@ -223,5 +229,22 @@
     "tooLong": "Deze tekst is te lang.",
     "priceInvalid": "Vul een geldig bedrag in, bijvoorbeeld 15,50.",
     "dateInvalid": "Kies een geldige datum."
+  },
+  "Tracking": {
+    "title": "Uw bestelling",
+    "orderNumber": "Bestelling #{number}",
+    "greeting": "Hallo {name},",
+    "currentStatus": "Status",
+    "RECEIVED": "We hebben uw kleding ontvangen. We gaan er binnenkort mee aan de slag.",
+    "IN_PROGRESS": "We zijn met uw kleding bezig.",
+    "READY_FOR_PICKUP": "Uw kleding is klaar! U kunt het ophalen in de winkel.",
+    "DELIVERED": "U heeft uw kleding opgehaald. Bedankt en tot ziens!",
+    "CANCELLED": "Deze bestelling is geannuleerd. Heeft u vragen? Neem contact met ons op.",
+    "expectedReady": "Verwacht klaar",
+    "work": "Wat we doen",
+    "timeline": "Verloop",
+    "pickupTitle": "Ophalen",
+    "pickupText": "Neem uw bon of bestelnummer mee naar de winkel.",
+    "privacyNote": "Deze pagina is alleen te zien met uw persoonlijke link. Deel de link niet met anderen."
   }
 }

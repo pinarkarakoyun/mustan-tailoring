@@ -1,7 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { connection } from "next/server";
 import type { Locale } from "@/i18n/routing";
-import type { Order, OrderStatus, StatusChange } from "@/types/order";
+import type { Order, OrderStatus, PublicOrder, StatusChange } from "@/types/order";
 import { createSeedData } from "./mock-data";
 import { generateTrackingToken } from "./token";
 
@@ -172,4 +172,33 @@ export async function changeOrderStatus(
   order.updatedAt = now;
   store.statusChanges.push({ id: randomUUID(), orderId: id, status, changedAt: now });
   return structuredClone(order);
+}
+
+// Tokens are base64url (see token.ts); demo tokens have a "demo-" prefix.
+const TOKEN_PATTERN = /^[A-Za-z0-9_-]{20,64}$/;
+
+/**
+ * Public view of an order for /track/<token>, or null if the token is unknown.
+ * Builds a new object with only the allowed fields, so private data can never
+ * reach the public page by accident (privacy by design).
+ */
+export async function getPublicOrderByToken(token: string): Promise<PublicOrder | null> {
+  if (!TOKEN_PATTERN.test(token)) return null;
+
+  const store = await getStore();
+  const order = store.orders.find((candidate) => candidate.trackingToken === token);
+  if (!order) return null;
+
+  return {
+    orderNumber: order.orderNumber,
+    firstName: order.customerName.split(/\s+/)[0],
+    serviceId: order.serviceId,
+    publicDescription: order.publicDescription,
+    status: order.status,
+    estimatedReadyDate: order.estimatedReadyDate,
+    timeline: store.statusChanges
+      .filter((change) => change.orderId === order.id)
+      .sort((a, b) => a.changedAt.localeCompare(b.changedAt))
+      .map(({ status, changedAt }) => ({ status, changedAt })),
+  };
 }

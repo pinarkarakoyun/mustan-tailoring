@@ -179,7 +179,13 @@
     "otherStatusHint": "Chose the wrong one by mistake? Set the status back here.",
     "setStatus": "Set to: {status}",
     "noticeSaved": "Changes saved.",
-    "noticeStatus": "Status changed to: {status}"
+    "noticeStatus": "Status changed to: {status}",
+    "trackingTitle": "Customer tracking",
+    "trackingText": "The customer can scan this QR code or open the link. The customer only sees first name, order number, description and status.",
+    "qrAlt": "QR code for order #{number}",
+    "openTracking": "Open tracking page",
+    "copyLink": "Copy link",
+    "copied": "Link copied"
   },
   "NewOrder": {
     "title": "New order",
@@ -223,5 +229,22 @@
     "tooLong": "This text is too long.",
     "priceInvalid": "Enter a valid amount, for example 15.50.",
     "dateInvalid": "Choose a valid date."
+  },
+  "Tracking": {
+    "title": "Your order",
+    "orderNumber": "Order #{number}",
+    "greeting": "Hello {name},",
+    "currentStatus": "Status",
+    "RECEIVED": "We have received your clothes. We will start working on them soon.",
+    "IN_PROGRESS": "We are working on your clothes.",
+    "READY_FOR_PICKUP": "Your clothes are ready! You can pick them up in the shop.",
+    "DELIVERED": "You have picked up your clothes. Thank you!",
+    "CANCELLED": "This order has been cancelled. Questions? Please contact us.",
+    "expectedReady": "Expected ready",
+    "work": "What we do",
+    "timeline": "Progress",
+    "pickupTitle": "Pick up",
+    "pickupText": "Bring your receipt or order number to the shop.",
+    "privacyNote": "This page can only be seen with your personal link. Please do not share the link."
   }
 }
