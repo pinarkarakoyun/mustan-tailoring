@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 
-type ButtonVariant = "primary" | "secondary";
+export type ButtonVariant = "primary" | "secondary";
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
@@ -9,14 +9,18 @@ const variantClasses: Record<ButtonVariant, string> = {
     "border-2 border-primary bg-surface text-primary hover:bg-background",
 };
 
+/**
+ * Classes for a large, touch-friendly button (min. 56px high).
+ * Shared by <Button> and <ButtonLink> so both always look the same.
+ */
+export function buttonClasses(variant: ButtonVariant = "primary"): string {
+  return `inline-flex min-h-14 items-center justify-center rounded-xl px-6 text-center text-lg font-semibold transition-colors focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-50 ${variantClasses[variant]}`;
+}
+
 type ButtonProps = ComponentProps<"button"> & {
   variant?: ButtonVariant;
 };
 
-/**
- * Large, touch-friendly button (min. 56px high) used across the whole app.
- * Keeping it in one place guarantees the "big buttons" UX rule everywhere.
- */
 export function Button({
   variant = "primary",
   className = "",
@@ -26,7 +30,7 @@ export function Button({
   return (
     <button
       type={type}
-      className={`inline-flex min-h-14 items-center justify-center rounded-xl px-6 text-lg font-semibold transition-colors focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:opacity-50 ${variantClasses[variant]} ${className}`}
+      className={`${buttonClasses(variant)} ${className}`}
       {...props}
     />
   );

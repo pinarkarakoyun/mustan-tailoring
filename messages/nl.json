@@ -1,0 +1,96 @@
+{
+  "Metadata": {
+    "description": "Kledingreparatie en vermaakatelier. Wij korten, vermaken en repareren uw kleding. Volg uw bestelling online."
+  },
+  "Nav": {
+    "home": "Home",
+    "services": "Diensten",
+    "howItWorks": "Hoe werkt het",
+    "contact": "Contact",
+    "mainMenu": "Hoofdmenu"
+  },
+  "LanguageSwitcher": {
+    "label": "Kies een taal"
+  },
+  "Common": {
+    "trackOrder": "Volg uw bestelling",
+    "whatsappUs": "Stuur een WhatsApp",
+    "callUs": "Bel ons",
+    "priceFrom": "Vanaf {price}",
+    "priceOnRequest": "Prijs in de winkel",
+    "backHome": "Terug naar home"
+  },
+  "Footer": {
+    "privacy": "Privacy"
+  },
+  "Home": {
+    "title": "Kleding vermaken en repareren",
+    "intro": "Te lange broek, kapotte rits of een jas die niet goed past? Breng het langs. Wij helpen u snel en vakkundig.",
+    "servicesTitle": "Onze diensten",
+    "allServices": "Bekijk alle diensten",
+    "howItWorksTitle": "Zo werkt het",
+    "visitTitle": "Kom langs",
+    "allContactInfo": "Alle contactgegevens"
+  },
+  "Services": {
+    "title": "Diensten",
+    "intro": "Wij doen alle soorten kledingreparaties en vermaakwerk. De prijs hangt af van het kledingstuk en het werk.",
+    "otherTitle": "Staat uw klus er niet bij?",
+    "otherText": "Kom langs of stuur een WhatsApp. Wij kijken graag wat mogelijk is."
+  },
+  "HowItWorks": {
+    "title": "Hoe werkt het",
+    "intro": "U hoeft niets te installeren en geen account te maken.",
+    "step1Title": "Breng uw kleding",
+    "step1Text": "Kom langs in de winkel en vertel wat er moet gebeuren.",
+    "step2Title": "Wij noteren uw bestelling",
+    "step2Text": "U krijgt een bon met een bestelnummer en een QR-code.",
+    "step3Title": "Volg het online",
+    "step3Text": "Scan de QR-code met uw telefoon om te zien hoe het ervoor staat. Dit is niet verplicht.",
+    "step4Title": "Ophalen",
+    "step4Text": "Is het klaar? Dan sturen wij u een WhatsApp-bericht. U kunt het ophalen in de winkel."
+  },
+  "Contact": {
+    "title": "Contact",
+    "address": "Adres",
+    "openInMaps": "Open in Google Maps",
+    "phone": "Telefoon",
+    "whatsapp": "WhatsApp",
+    "email": "E-mail",
+    "openingHours": "Openingstijden",
+    "closed": "Gesloten",
+    "hoursRange": "{open} – {close}"
+  },
+  "Days": {
+    "mon": "Maandag",
+    "tue": "Dinsdag",
+    "wed": "Woensdag",
+    "thu": "Donderdag",
+    "fri": "Vrijdag",
+    "sat": "Zaterdag",
+    "sun": "Zondag"
+  },
+  "Track": {
+    "title": "Volg uw bestelling",
+    "intro": "U kunt uw bestelling op twee manieren volgen:",
+    "optionQr": "Scan de QR-code op uw bon met de camera van uw telefoon.",
+    "optionLink": "Of open de link die wij u via WhatsApp hebben gestuurd.",
+    "noCode": "Geen bon of link meer? Neem contact met ons op, dan helpen wij u verder."
+  },
+  "Privacy": {
+    "title": "Privacy",
+    "intro": "Wij gaan zorgvuldig om met uw gegevens en verzamelen alleen wat nodig is.",
+    "collectTitle": "Welke gegevens bewaren wij?",
+    "collectText": "Uw naam, telefoonnummer en informatie over uw bestelling (zoals het soort werk, de prijs en de datum).",
+    "purposeTitle": "Waarom?",
+    "purposeText": "Om uw bestelling te verwerken en u te laten weten wanneer uw kleding klaar is. Wij delen uw gegevens niet met anderen en gebruiken ze niet voor reclame.",
+    "trackingTitle": "De volgpagina",
+    "trackingText": "De link op uw bon is uniek en moeilijk te raden. Op de volgpagina staan alleen uw voornaam, uw bestelnummer en de status. Uw telefoonnummer is daar nooit zichtbaar.",
+    "rightsTitle": "Uw rechten",
+    "rightsText": "U mag altijd vragen welke gegevens wij van u hebben, of vragen om ze aan te passen of te verwijderen. Neem hiervoor contact met ons op."
+  },
+  "NotFound": {
+    "title": "Pagina niet gevonden",
+    "text": "Deze pagina bestaat niet (meer). Controleer de link of ga terug naar de homepage."
+  }
+}

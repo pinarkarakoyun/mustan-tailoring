@@ -1,0 +1,96 @@
+{
+  "Metadata": {
+    "description": "Clothing repair and alteration workshop. We shorten, alter and repair your clothes. Track your order online."
+  },
+  "Nav": {
+    "home": "Home",
+    "services": "Services",
+    "howItWorks": "How it works",
+    "contact": "Contact",
+    "mainMenu": "Main menu"
+  },
+  "LanguageSwitcher": {
+    "label": "Choose a language"
+  },
+  "Common": {
+    "trackOrder": "Track your order",
+    "whatsappUs": "Send a WhatsApp",
+    "callUs": "Call us",
+    "priceFrom": "From {price}",
+    "priceOnRequest": "Price in the shop",
+    "backHome": "Back to home"
+  },
+  "Footer": {
+    "privacy": "Privacy"
+  },
+  "Home": {
+    "title": "Clothing alterations and repairs",
+    "intro": "Trousers too long, a broken zipper or a jacket that doesn't fit right? Bring it in. We help you quickly and with care.",
+    "servicesTitle": "Our services",
+    "allServices": "See all services",
+    "howItWorksTitle": "How it works",
+    "visitTitle": "Visit us",
+    "allContactInfo": "All contact details"
+  },
+  "Services": {
+    "title": "Services",
+    "intro": "We do all kinds of clothing repairs and alterations. The price depends on the garment and the work.",
+    "otherTitle": "Your job is not on the list?",
+    "otherText": "Visit the shop or send us a WhatsApp. We are happy to see what is possible."
+  },
+  "HowItWorks": {
+    "title": "How it works",
+    "intro": "No app to install and no account needed.",
+    "step1Title": "Bring your clothes",
+    "step1Text": "Come to the shop and tell us what needs to be done.",
+    "step2Title": "We register your order",
+    "step2Text": "You get a receipt with an order number and a QR code.",
+    "step3Title": "Track it online",
+    "step3Text": "Scan the QR code with your phone to see the status. This is optional.",
+    "step4Title": "Pick up",
+    "step4Text": "When it's ready, we send you a WhatsApp message. You can pick it up in the shop."
+  },
+  "Contact": {
+    "title": "Contact",
+    "address": "Address",
+    "openInMaps": "Open in Google Maps",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "openingHours": "Opening hours",
+    "closed": "Closed",
+    "hoursRange": "{open} – {close}"
+  },
+  "Days": {
+    "mon": "Monday",
+    "tue": "Tuesday",
+    "wed": "Wednesday",
+    "thu": "Thursday",
+    "fri": "Friday",
+    "sat": "Saturday",
+    "sun": "Sunday"
+  },
+  "Track": {
+    "title": "Track your order",
+    "intro": "You can track your order in two ways:",
+    "optionQr": "Scan the QR code on your receipt with your phone camera.",
+    "optionLink": "Or open the link we sent you via WhatsApp.",
+    "noCode": "Lost your receipt or link? Contact us and we will help you."
+  },
+  "Privacy": {
+    "title": "Privacy",
+    "intro": "We handle your data with care and only collect what is needed.",
+    "collectTitle": "What data do we keep?",
+    "collectText": "Your name, phone number and information about your order (such as the type of work, price and date).",
+    "purposeTitle": "Why?",
+    "purposeText": "To process your order and let you know when your clothes are ready. We do not share your data with others and do not use it for advertising.",
+    "trackingTitle": "The tracking page",
+    "trackingText": "The link on your receipt is unique and hard to guess. The tracking page only shows your first name, order number and status. Your phone number is never shown there.",
+    "rightsTitle": "Your rights",
+    "rightsText": "You can always ask which data we have about you, or ask us to correct or delete it. Just contact us."
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "text": "This page does not exist. Check the link or go back to the homepage."
+  }
+}
