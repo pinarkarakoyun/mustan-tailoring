@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 import { SiteFooter } from "@/components/public/SiteFooter";
@@ -7,12 +6,8 @@ import { SiteHeader } from "@/components/public/SiteHeader";
 import { PageIntro } from "@/components/public/PageIntro";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { getClientMessages, PUBLIC_CLIENT_NAMESPACES } from "@/i18n/client-messages";
+import { fontVariables } from "./fonts";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin", "latin-ext"],
-});
 
 export const metadata: Metadata = {
   title: "404",
@@ -31,11 +26,11 @@ export default async function GlobalNotFound() {
   const tCommon = await getTranslations("Common");
 
   return (
-    <html lang={locale} className={`${geistSans.variable} h-full antialiased`}>
+    <html lang={locale} className={`${fontVariables} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
         <NextIntlClientProvider messages={await getClientMessages(PUBLIC_CLIENT_NAMESPACES)}>
           <SiteHeader />
-          <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-8">
+          <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-16">
             <PageIntro title={t("title")} intro={t("text")} />
             <ButtonLink href="/">{tCommon("backHome")}</ButtonLink>
           </main>

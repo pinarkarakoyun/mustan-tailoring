@@ -3,6 +3,7 @@ import { SiteHeader } from "@/components/public/SiteHeader";
 import { initPageLocale } from "@/i18n/page-locale";
 
 // Layout for the public website. "(site)" is a route group: it is not part of the URL.
+// Pages set their own width, so photo sections can use the full screen width.
 export default async function SiteLayout({
   children,
   params,
@@ -12,9 +13,7 @@ export default async function SiteLayout({
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-8">
-        {children}
-      </main>
+      <main className="flex w-full flex-1 flex-col">{children}</main>
       <SiteFooter />
     </>
   );

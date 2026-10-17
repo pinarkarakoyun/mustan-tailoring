@@ -1,14 +1,16 @@
+import { SectionHeading } from "./SectionHeading";
+
 type PageIntroProps = {
+  eyebrow?: string;
   title: string;
   intro?: string;
 };
 
-/** Page title (h1) with an optional short introduction. */
-export function PageIntro({ title, intro }: PageIntroProps) {
+/** Page title (h1) for pages without a photo header. */
+export function PageIntro({ eyebrow, title, intro }: PageIntroProps) {
   return (
-    <div className="mb-8 flex flex-col gap-3">
-      <h1 className="text-3xl font-bold">{title}</h1>
-      {intro && <p className="text-lg text-muted">{intro}</p>}
+    <div className="mb-10">
+      <SectionHeading as="h1" eyebrow={eyebrow} title={title} intro={intro} />
     </div>
   );
 }

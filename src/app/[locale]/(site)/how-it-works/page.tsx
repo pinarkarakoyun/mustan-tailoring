@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { HowItWorksSteps } from "@/components/public/HowItWorksSteps";
-import { PageIntro } from "@/components/public/PageIntro";
+import { PageHero } from "@/components/public/PageHero";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { initPageLocale } from "@/i18n/page-locale";
+import { siteImages } from "@/lib/site-images";
 
 export async function generateMetadata({
   params,
@@ -22,11 +23,13 @@ export default async function HowItWorksPage({
 
   return (
     <>
-      <PageIntro title={t("title")} intro={t("intro")} />
-      <HowItWorksSteps />
-      <ButtonLink href="/track" className="mt-10 w-full sm:w-auto">
-        {tCommon("trackOrder")}
-      </ButtonLink>
+      <PageHero image={siteImages.about} eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 py-16">
+        <HowItWorksSteps />
+        <ButtonLink href="/track" className="self-start">
+          {tCommon("trackOrder")}
+        </ButtonLink>
+      </div>
     </>
   );
 }

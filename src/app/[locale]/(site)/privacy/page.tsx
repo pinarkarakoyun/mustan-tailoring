@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { PageIntro } from "@/components/public/PageIntro";
 import { initPageLocale } from "@/i18n/page-locale";
-import { shop } from "@/lib/shop";
+import { shop, shopAddressLine } from "@/lib/shop";
 
 const sections = [
   { title: "collectTitle", text: "collectText" },
@@ -26,19 +26,19 @@ export default async function PrivacyPage({
   const t = await getTranslations("Privacy");
 
   return (
-    <>
+    <div className="mx-auto w-full max-w-3xl px-4 py-16">
       <PageIntro title={t("title")} intro={t("intro")} />
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-8">
         {sections.map((section) => (
           <section key={section.title} className="flex flex-col gap-2">
-            <h2 className="text-xl font-bold">{t(section.title)}</h2>
+            <h2 className="text-2xl">{t(section.title)}</h2>
             <p>{t(section.text)}</p>
           </section>
         ))}
         <p className="text-muted">
-          {shop.name} · {shop.email}
+          {shop.fullName} · {shopAddressLine()} · {shop.phoneDisplay}
         </p>
       </div>
-    </>
+    </div>
   );
 }

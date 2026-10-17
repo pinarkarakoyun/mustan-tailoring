@@ -52,5 +52,5 @@ npm run build
 - One shared admin password, no rate limiting beyond a short delay.
 - In production mode the login cookie is HTTPS-only, so `next start` over plain `http://192.168…` cannot keep you logged in. Use `npm run dev` for local demos.
 - An unknown tracking token shows the translated "not found" page with HTTP status 200 in production (the page is `noindex`).
-- Next.js partial prefetching sometimes requests `/track` with the wrong route pattern (because Dutch URLs have no `/nl` prefix) and gets a 404 for that prefetch. Clicking the link still works.
+- Next.js `partialPrefetching` is turned off (see `next.config.ts`): with Dutch URLs without a `/nl` prefix it caused an endless prefetch loop for `/track`.
 - Shop address, phone, opening hours and service prices are placeholders; Dutch texts need review by a native speaker.

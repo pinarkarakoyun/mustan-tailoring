@@ -1,5 +1,6 @@
 // Business information shown on the public site.
-// DEMO VALUES: confirm address, phone, WhatsApp, email and hours with the owner (PRD §18).
+// Address and phone come from the current website (kledingreparatie-mustan.nl).
+// TODO (owner): confirm WhatsApp number, opening hours and the social media links.
 
 export type Weekday = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
 
@@ -10,19 +11,28 @@ export type OpeningHours = {
 };
 
 export const shop = {
-  name: "Kledingreparatie Mustan",
+  name: "Mustan",
+  /** Shown under the name, like on the shop sign and the current website. */
+  tagline: "Kledingreparatie & Stomerij",
+  fullName: "Mustan Kledingreparatie & Stomerij",
+  yearsOfExperience: 25,
   address: {
-    street: "Voorbeeldstraat 1",
-    postalCode: "1234 AB",
-    city: "Voorbeeldstad",
+    street: "Nieuwe Ebbingestraat 54",
+    postalCode: "9712 NM",
+    city: "Groningen",
   },
   /** Phone as shown to visitors. */
-  phoneDisplay: "020 123 4567",
+  phoneDisplay: "050 313 0801",
   /** Phone in international format, used for tel: links. */
-  phone: "+31201234567",
-  /** WhatsApp number in international format (digits only after +). */
+  phone: "+31503130801",
+  /** WhatsApp number in international format. DEMO VALUE until the owner confirms it. */
   whatsapp: "+31612345678",
-  email: "info@kledingreparatie-mustan.nl",
+  /** Social media pages. Placeholders until the owner sends the real links. */
+  social: {
+    facebook: "https://www.facebook.com/",
+    instagram: "https://www.instagram.com/",
+  },
+  // DEMO VALUES: confirm with the owner.
   openingHours: [
     { day: "mon", hours: null },
     { day: "tue", hours: { open: "09:00", close: "18:00" } },
@@ -41,7 +51,7 @@ export function shopAddressLine(): string {
 
 /** Link that opens the address in Google Maps (no embedded map = no third-party cookies). */
 export function shopMapsUrl(): string {
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(shopAddressLine())}`;
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${shop.fullName}, ${shopAddressLine()}`)}`;
 }
 
 /** Opens a WhatsApp chat with the shop. */

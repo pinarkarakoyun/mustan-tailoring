@@ -36,7 +36,7 @@ export async function WhatsAppCard({ order }: WhatsAppCardProps) {
   const values = {
     name: order.customerName.split(/\s+/)[0],
     number: order.orderNumber,
-    shop: shop.name,
+    shop: shop.fullName,
     address: shopAddressLine(),
     link: await getTrackingUrl(order.trackingToken, order.customerLanguage),
   };

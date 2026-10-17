@@ -21,22 +21,42 @@
     "backHome": "Terug naar home"
   },
   "Footer": {
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "visit": "Bezoek ons",
+    "menu": "Menu"
   },
   "Home": {
-    "title": "Kleding vermaken en repareren",
-    "intro": "Te lange broek, kapotte rits of een jas die niet goed past? Breng het langs. Wij helpen u snel en vakkundig.",
+    "title": "Uw kleding in vakkundige handen",
+    "intro": "Te lange broek, kapotte rits of een jas die niet goed past? Breng het langs. Wij helpen u snel, vakkundig en voor een eerlijke prijs.",
     "servicesTitle": "Onze diensten",
     "allServices": "Bekijk alle diensten",
     "howItWorksTitle": "Zo werkt het",
-    "visitTitle": "Kom langs",
-    "allContactInfo": "Alle contactgegevens"
+    "visitTitle": "Bezoek onze winkel",
+    "allContactInfo": "Alle contactgegevens",
+    "heroEyebrow": "Kleermaker in hartje Groningen",
+    "highlight1Title": "{years} jaar ervaring",
+    "highlight1Text": "Vakmanschap waar u op kunt rekenen.",
+    "highlight2Title": "Eerlijke prijzen",
+    "highlight2Text": "Kwaliteitsservice voor een betaalbare prijs.",
+    "highlight3Title": "Volg uw bestelling",
+    "highlight3Text": "Zie online wanneer uw kleding klaar is.",
+    "servicesEyebrow": "Wat wij doen",
+    "aboutEyebrow": "Over ons",
+    "aboutTitle": "Voor kwaliteitsservice en betaalbare prijzen",
+    "aboutText": "Al {years} jaar repareren en vermaken wij kleding in het centrum van Groningen. Van een broek inkorten tot een donsjas herstellen: elk kledingstuk krijgt de aandacht die het verdient.",
+    "howItWorksEyebrow": "Zo eenvoudig",
+    "partnersEyebrow": "Vertrouwd door",
+    "partnersTitle": "Onze zakenpartners",
+    "partnersText": "Voor deze winkels verzorgen wij het vermaakwerk.",
+    "visitEyebrow": "Kom langs",
+    "experienceLabel": "jaar ervaring"
   },
   "Services": {
     "title": "Diensten",
     "intro": "Wij doen alle soorten kledingreparaties en vermaakwerk. De prijs hangt af van het kledingstuk en het werk.",
     "otherTitle": "Staat uw klus er niet bij?",
-    "otherText": "Kom langs of stuur een WhatsApp. Wij kijken graag wat mogelijk is."
+    "otherText": "Kom langs of stuur een WhatsApp. Wij kijken graag wat mogelijk is.",
+    "eyebrow": "Wat wij doen"
   },
   "HowItWorks": {
     "title": "Hoe werkt het",
@@ -48,7 +68,8 @@
     "step3Title": "Volg het online",
     "step3Text": "Scan de QR-code met uw telefoon om te zien hoe het ervoor staat. Dit is niet verplicht.",
     "step4Title": "Ophalen",
-    "step4Text": "Is het klaar? Dan sturen wij u een WhatsApp-bericht. U kunt het ophalen in de winkel."
+    "step4Text": "Is het klaar? Dan sturen wij u een WhatsApp-bericht. U kunt het ophalen in de winkel.",
+    "eyebrow": "Zo werkt het"
   },
   "Contact": {
     "title": "Contact",
@@ -56,10 +77,11 @@
     "openInMaps": "Open in Google Maps",
     "phone": "Telefoon",
     "whatsapp": "WhatsApp",
-    "email": "E-mail",
     "openingHours": "Openingstijden",
     "closed": "Gesloten",
-    "hoursRange": "{open} – {close}"
+    "hoursRange": "{open} – {close}",
+    "eyebrow": "Kom langs",
+    "intro": "U bent van harte welkom in onze winkel. Bel, stuur een WhatsApp of volg ons online."
   },
   "Days": {
     "mon": "Maandag",
@@ -75,7 +97,8 @@
     "intro": "U kunt uw bestelling op twee manieren volgen:",
     "optionQr": "Scan de QR-code op uw bon met de camera van uw telefoon.",
     "optionLink": "Of open de link die wij u via WhatsApp hebben gestuurd.",
-    "noCode": "Geen bon of link meer? Neem contact met ons op, dan helpen wij u verder."
+    "noCode": "Geen bon of link meer? Neem contact met ons op, dan helpen wij u verder.",
+    "eyebrow": "Uw bestelling"
   },
   "Privacy": {
     "title": "Privacy",
@@ -255,5 +278,11 @@
   "WhatsAppMessage": {
     "ready": "Hallo {name}, goed nieuws: uw bestelling #{number} is klaar! U kunt het ophalen bij {shop}, {address}.\n\nBekijk uw bestelling: {link}\n\nMet vriendelijke groet,\n{shop}",
     "tracking": "Hallo {name}, bedankt voor uw bestelling #{number} bij {shop}. Via deze link kunt u zien hoe het ervoor staat:\n{link}\n\nMet vriendelijke groet,\n{shop}"
+  },
+  "Social": {
+    "title": "Volg ons",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp"
   }
 }

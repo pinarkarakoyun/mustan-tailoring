@@ -11,19 +11,14 @@ export function HowItWorksSteps() {
   const t = useTranslations("HowItWorks");
 
   return (
-    <ol className="flex flex-col gap-4">
+    <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {steps.map((step, index) => (
-        <li key={step.title} className="flex gap-4">
-          <span
-            aria-hidden="true"
-            className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-lg font-bold text-primary-foreground"
-          >
-            {index + 1}
+        <li key={step.title} className="reveal flex flex-col gap-3 rounded-2xl bg-surface p-6 ring-1 ring-border">
+          <span aria-hidden="true" className="font-display text-5xl leading-none text-accent">
+            {String(index + 1).padStart(2, "0")}
           </span>
-          <div>
-            <p className="font-semibold">{t(step.title)}</p>
-            <p className="text-muted">{t(step.text)}</p>
-          </div>
+          <p className="text-xl font-semibold">{t(step.title)}</p>
+          <p className="text-muted">{t(step.text)}</p>
         </li>
       ))}
     </ol>

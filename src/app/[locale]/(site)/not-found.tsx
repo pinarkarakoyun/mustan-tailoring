@@ -13,9 +13,9 @@ export default function NotFoundPage() {
   const tCommon = useTranslations("Common");
 
   return (
-    <>
+    <div className="mx-auto w-full max-w-3xl px-4 py-16">
       <PageIntro title={t("title")} intro={t("text")} />
       <ButtonLink href="/">{tCommon("backHome")}</ButtonLink>
-    </>
+    </div>
   );
 }

@@ -21,22 +21,42 @@
     "backHome": "Back to home"
   },
   "Footer": {
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "visit": "Visit us",
+    "menu": "Menu"
   },
   "Home": {
-    "title": "Clothing alterations and repairs",
-    "intro": "Trousers too long, a broken zipper or a jacket that doesn't fit right? Bring it in. We help you quickly and with care.",
+    "title": "Your clothes in skilled hands",
+    "intro": "Trousers too long, a broken zipper or a jacket that doesn't fit right? Bring it in. We help you quickly, with care and for a fair price.",
     "servicesTitle": "Our services",
     "allServices": "See all services",
     "howItWorksTitle": "How it works",
-    "visitTitle": "Visit us",
-    "allContactInfo": "All contact details"
+    "visitTitle": "Visit our shop",
+    "allContactInfo": "All contact details",
+    "heroEyebrow": "Tailor in the heart of Groningen",
+    "highlight1Title": "{years} years of experience",
+    "highlight1Text": "Craftsmanship you can rely on.",
+    "highlight2Title": "Fair prices",
+    "highlight2Text": "Quality service at an affordable price.",
+    "highlight3Title": "Track your order",
+    "highlight3Text": "See online when your clothes are ready.",
+    "servicesEyebrow": "What we do",
+    "aboutEyebrow": "About us",
+    "aboutTitle": "Quality service at affordable prices",
+    "aboutText": "For {years} years we have been repairing and altering clothes in the centre of Groningen. From shortening trousers to repairing a down jacket: every garment gets the care it deserves.",
+    "howItWorksEyebrow": "That simple",
+    "partnersEyebrow": "Trusted by",
+    "partnersTitle": "Our business partners",
+    "partnersText": "We take care of the alterations for these shops.",
+    "visitEyebrow": "Visit us",
+    "experienceLabel": "years of experience"
   },
   "Services": {
     "title": "Services",
     "intro": "We do all kinds of clothing repairs and alterations. The price depends on the garment and the work.",
     "otherTitle": "Your job is not on the list?",
-    "otherText": "Visit the shop or send us a WhatsApp. We are happy to see what is possible."
+    "otherText": "Visit the shop or send us a WhatsApp. We are happy to see what is possible.",
+    "eyebrow": "What we do"
   },
   "HowItWorks": {
     "title": "How it works",
@@ -48,7 +68,8 @@
     "step3Title": "Track it online",
     "step3Text": "Scan the QR code with your phone to see the status. This is optional.",
     "step4Title": "Pick up",
-    "step4Text": "When it's ready, we send you a WhatsApp message. You can pick it up in the shop."
+    "step4Text": "When it's ready, we send you a WhatsApp message. You can pick it up in the shop.",
+    "eyebrow": "How it works"
   },
   "Contact": {
     "title": "Contact",
@@ -56,10 +77,11 @@
     "openInMaps": "Open in Google Maps",
     "phone": "Phone",
     "whatsapp": "WhatsApp",
-    "email": "Email",
     "openingHours": "Opening hours",
     "closed": "Closed",
-    "hoursRange": "{open} – {close}"
+    "hoursRange": "{open} – {close}",
+    "eyebrow": "Visit us",
+    "intro": "You are always welcome in our shop. Call us, send a WhatsApp or follow us online."
   },
   "Days": {
     "mon": "Monday",
@@ -75,7 +97,8 @@
     "intro": "You can track your order in two ways:",
     "optionQr": "Scan the QR code on your receipt with your phone camera.",
     "optionLink": "Or open the link we sent you via WhatsApp.",
-    "noCode": "Lost your receipt or link? Contact us and we will help you."
+    "noCode": "Lost your receipt or link? Contact us and we will help you.",
+    "eyebrow": "Your order"
   },
   "Privacy": {
     "title": "Privacy",
@@ -255,5 +278,11 @@
   "WhatsAppMessage": {
     "ready": "Hello {name}, good news: your order #{number} is ready! You can pick it up at {shop}, {address}.\n\nView your order: {link}\n\nKind regards,\n{shop}",
     "tracking": "Hello {name}, thank you for your order #{number} at {shop}. You can follow its progress with this link:\n{link}\n\nKind regards,\n{shop}"
+  },
+  "Social": {
+    "title": "Follow us",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp"
   }
 }

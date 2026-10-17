@@ -22,8 +22,8 @@ export default async function TrackInfoPage({
   const tNav = await getTranslations("Nav");
 
   return (
-    <>
-      <PageIntro title={t("title")} intro={t("intro")} />
+    <div className="mx-auto w-full max-w-3xl px-4 py-16">
+      <PageIntro eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
       <ol className="mb-8 flex list-decimal flex-col gap-3 pl-6 text-lg">
         <li>{t("optionQr")}</li>
         <li>{t("optionLink")}</li>
@@ -32,6 +32,6 @@ export default async function TrackInfoPage({
       <ButtonLink href="/contact" variant="secondary">
         {tNav("contact")}
       </ButtonLink>
-    </>
+    </div>
   );
 }

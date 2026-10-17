@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { PageIntro } from "@/components/public/PageIntro";
-import { ServiceList } from "@/components/public/ServiceList";
+import { PageHero } from "@/components/public/PageHero";
+import { ServiceGrid } from "@/components/public/ServiceGrid";
 import { ExternalButtonLink } from "@/components/ui/ButtonLink";
 import { initPageLocale } from "@/i18n/page-locale";
 import { getActiveServices, OTHER_SERVICE_ID } from "@/lib/services";
 import { shopWhatsAppUrl } from "@/lib/shop";
+import { getServiceImage } from "@/lib/site-images";
 
 export async function generateMetadata({
   params,
@@ -27,20 +28,24 @@ export default async function ServicesPage({
 
   return (
     <>
-      <PageIntro title={t("title")} intro={t("intro")} />
-      <ServiceList services={services} showPrices />
+      <PageHero
+        image={getServiceImage("jacket-alteration")}
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        intro={t("intro")}
+      />
 
-      <section className="mt-10 flex flex-col gap-3 rounded-xl bg-surface p-5">
-        <h2 className="text-xl font-bold">{t("otherTitle")}</h2>
-        <p className="text-muted">{t("otherText")}</p>
-        <ExternalButtonLink
-          href={shopWhatsAppUrl()}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {tCommon("whatsappUs")}
-        </ExternalButtonLink>
-      </section>
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-14 px-4 py-16">
+        <ServiceGrid services={services} showPrices />
+
+        <section className="reveal flex flex-col items-start gap-4 rounded-2xl bg-primary p-8 text-background sm:p-10">
+          <h2 className="text-3xl">{t("otherTitle")}</h2>
+          <p className="max-w-xl text-lg text-background/85">{t("otherText")}</p>
+          <ExternalButtonLink href={shopWhatsAppUrl()} target="_blank" rel="noopener noreferrer" variant="light">
+            {tCommon("whatsappUs")}
+          </ExternalButtonLink>
+        </section>
+      </div>
     </>
   );
 }

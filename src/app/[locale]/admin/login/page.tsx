@@ -26,7 +26,7 @@ export default async function LoginPage({
       </div>
       <div className="flex flex-col gap-6 rounded-2xl border border-border bg-surface p-6">
         <div className="flex flex-col gap-2">
-          <p className="font-semibold text-primary">{shop.name}</p>
+          <p className="font-semibold text-accent-strong">{shop.fullName}</p>
           <h1 className="text-3xl font-bold">{t("title")}</h1>
           <p className="text-muted">{t("intro")}</p>
         </div>

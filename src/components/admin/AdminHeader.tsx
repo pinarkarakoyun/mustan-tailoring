@@ -1,9 +1,9 @@
 import { useTranslations } from "next-intl";
 import { logout } from "@/app/[locale]/admin/actions";
+import { ShopLogo } from "@/components/public/ShopLogo";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { NavLink } from "@/components/ui/NavLink";
 import { Link } from "@/i18n/navigation";
-import { shop } from "@/lib/shop";
 
 export function AdminHeader() {
   const t = useTranslations("Admin");
@@ -13,7 +13,7 @@ export function AdminHeader() {
       <div className="mx-auto flex max-w-3xl flex-col gap-2 px-4 py-3">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <Link href="/admin" className="flex flex-wrap items-center gap-2">
-            <span className="text-xl font-bold text-primary">{shop.name}</span>
+            <ShopLogo />
             <span className="rounded-full bg-primary px-2 py-0.5 text-sm font-semibold text-primary-foreground">
               {t("panelName")}
             </span>

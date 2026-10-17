@@ -65,6 +65,9 @@ Initial list (to be confirmed with the owner, with real prices):
 - Zipper replacement
 - Jacket alteration
 - General repair (tears, buttons, seams)
+- Leather repair (jackets, bags)
+- Down jacket repair (burns, tears)
+- Dry cleaning (stomerij)
 - Other
 
 ### 6.3 Status
@@ -93,7 +96,9 @@ Supported: Dutch (default for the public website), Turkish, English.
 - **Home:** short introduction, main services, call to action, "Track your order" button, contact info.
 - **Services:** service list (prices as "from" prices once confirmed).
 - **How it works:** 1) bring clothing, 2) we register your order, 3) track online, 4) pick up when ready.
-- **Contact:** address, phone, opening hours, map, WhatsApp, email if applicable.
+- **Contact:** address, phone, opening hours, map link, WhatsApp, Facebook and Instagram buttons. No email address.
+- **Business partners:** logos of the shops the owner works with, each linking to that shop's website.
+- **Look and feel:** close to the existing site (kledingreparatie-mustan.nl): large photos, Vidaloka headings (like the shop sign), elegant palette. Stock photos until the owner provides his own.
 - Language switcher.
 
 ## 11. Admin panel
@@ -129,7 +134,7 @@ Goal: show the user experience to the owner and collect feedback. Mock/demo data
 Flow to demonstrate: Public site → Admin login → Dashboard → Create order → Order detail → QR → Customer tracking.
 
 ## 17. UX principles
-Simplicity over functionality. Minimize clicks. Clear labels, no technical terms. Large touch-friendly buttons. Mobile first, desktop compatible. Few animations. Important information visible immediately.
+Simplicity over functionality. Minimize clicks. Clear labels, no technical terms. Large touch-friendly buttons. Mobile first, desktop compatible. Only subtle animations (gentle fade-in on scroll, hover effects); no auto-playing sliders; animations are disabled when the device asks for reduced motion. Important information visible immediately.
 
 ## 18. Open questions (to ask the owner)
 - Real service list and prices.

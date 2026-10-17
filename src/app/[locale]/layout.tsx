@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { getClientMessages, PUBLIC_CLIENT_NAMESPACES } from "@/i18n/client-messages";
 import { initPageLocale } from "@/i18n/page-locale";
 import { routing } from "@/i18n/routing";
 import { shop } from "@/lib/shop";
+import { fontVariables } from "../fonts";
 import "../globals.css";
-
-// next/font downloads the font at build time and serves it ourselves,
-// so visitors' browsers never contact Google (better for privacy/GDPR).
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin", "latin-ext"],
-});
 
 // Pre-render every page once per language at build time.
 export function generateStaticParams() {
@@ -27,7 +20,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
   return {
-    title: { default: shop.name, template: `%s | ${shop.name}` },
+    title: { default: shop.fullName, template: `%s | ${shop.fullName}` },
     description: t("description"),
   };
 }
@@ -40,7 +33,7 @@ export default async function LocaleLayout({
   const locale = await initPageLocale(params);
 
   return (
-    <html lang={locale} className={`${geistSans.variable} h-full antialiased`}>
+    <html lang={locale} className={`${fontVariables} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
         {/* Makes translations available in client components ("use client"), only the public ones. */}
         <NextIntlClientProvider messages={await getClientMessages(PUBLIC_CLIENT_NAMESPACES)}>

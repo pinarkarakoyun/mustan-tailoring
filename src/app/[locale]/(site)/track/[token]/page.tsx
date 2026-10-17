@@ -48,22 +48,22 @@ export default async function TrackingPage({ params }: Props) {
   const readyDate = isOpen(order.status) ? order.estimatedReadyDate : null;
 
   return (
-    <div className="flex flex-col gap-8">
-      <header className="flex flex-col gap-1">
-        <p className="text-lg font-semibold text-muted">
+    <div className="mx-auto flex w-full max-w-3xl flex-col gap-10 px-4 py-14">
+      <header className="animate-fade-up flex flex-col gap-2">
+        <p className="text-sm font-semibold tracking-[0.2em] text-accent-strong uppercase">
           {t("orderNumber", { number: order.orderNumber })}
         </p>
-        <h1 className="text-3xl font-bold">{t("greeting", { name: order.firstName })}</h1>
+        <h1 className="text-4xl sm:text-5xl">{t("greeting", { name: order.firstName })}</h1>
       </header>
 
       <section
         aria-label={t("currentStatus")}
-        className="flex flex-col gap-3 rounded-2xl border-2 border-primary bg-surface p-5"
+        className="flex flex-col gap-3 rounded-2xl border-2 border-accent bg-surface p-6 shadow-sm"
       >
         <div>
           <StatusBadge status={order.status} />
         </div>
-        <p className="text-xl font-semibold">{t(order.status)}</p>
+        <p className="text-2xl font-semibold">{t(order.status)}</p>
         {readyDate && (
           <p className="text-lg">
             {t("expectedReady")}:{" "}
@@ -86,15 +86,15 @@ export default async function TrackingPage({ params }: Props) {
       <Section title={t("pickupTitle")}>
         <p>{t("pickupText")}</p>
         <p className="font-medium">
-          {shop.name}
+          {shop.fullName}
           <br />
           {shopAddressLine()}
           <br />
-          <a href={shopMapsUrl()} target="_blank" rel="noopener noreferrer" className="text-primary underline">
+          <a href={shopMapsUrl()} target="_blank" rel="noopener noreferrer" className="text-accent-strong underline underline-offset-4">
             {tContact("openInMaps")}
           </a>
         </p>
-        <h3 className="mt-2 font-bold">{tContact("openingHours")}</h3>
+        <h3 className="mt-2 font-display text-xl">{tContact("openingHours")}</h3>
         <OpeningHoursList />
         <div className="mt-2 flex flex-col gap-3 sm:flex-row">
           <ExternalButtonLink href={`tel:${shop.phone}`}>{tCommon("callUs")}</ExternalButtonLink>
@@ -117,7 +117,7 @@ export default async function TrackingPage({ params }: Props) {
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section className="flex flex-col gap-3">
-      <h2 className="text-2xl font-bold">{title}</h2>
+      <h2 className="text-3xl">{title}</h2>
       {children}
     </section>
   );
