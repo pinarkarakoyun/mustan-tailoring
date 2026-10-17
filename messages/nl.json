@@ -92,5 +92,50 @@
   "NotFound": {
     "title": "Pagina niet gevonden",
     "text": "Deze pagina bestaat niet (meer). Controleer de link of ga terug naar de homepage."
+  },
+  "Status": {
+    "RECEIVED": "Ontvangen",
+    "IN_PROGRESS": "In behandeling",
+    "READY_FOR_PICKUP": "Klaar om op te halen",
+    "DELIVERED": "Opgehaald",
+    "CANCELLED": "Geannuleerd"
+  },
+  "Admin": {
+    "panelName": "Beheer",
+    "logout": "Uitloggen"
+  },
+  "AdminLogin": {
+    "title": "Inloggen",
+    "intro": "Alleen voor medewerkers van de winkel.",
+    "password": "Wachtwoord",
+    "submit": "Inloggen",
+    "submitting": "Bezig met inloggen…",
+    "wrongPassword": "Het wachtwoord klopt niet. Probeer het opnieuw.",
+    "notConfigured": "Inloggen is nog niet ingesteld. Vul ADMIN_PASSWORD en AUTH_SECRET in .env.local in."
+  },
+  "Dashboard": {
+    "title": "Overzicht",
+    "loading": "Bestellingen laden…",
+    "attention": "Aandacht nodig",
+    "attentionHint": "De klaar-datum is vandaag of al voorbij.",
+    "incomplete": "Gegevens aanvullen",
+    "incompleteHint": "Deze bestellingen missen nog informatie.",
+    "ready": "Klaar om op te halen",
+    "inProgress": "In behandeling",
+    "recent": "Nieuwste bestellingen",
+    "empty": "Geen bestellingen."
+  },
+  "OrderCard": {
+    "readyBy": "Klaar op {date}",
+    "noDate": "Geen klaar-datum",
+    "noService": "Geen dienst gekozen",
+    "overdue": "Te laat",
+    "dueToday": "Vandaag klaar",
+    "missing": "Ontbreekt:"
+  },
+  "MissingField": {
+    "service": "Dienst",
+    "price": "Prijs",
+    "estimatedReadyDate": "Klaar-datum"
   }
 }

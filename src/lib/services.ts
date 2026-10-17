@@ -75,3 +75,8 @@ export async function getActiveServices(): Promise<Service[]> {
     .filter((service) => service.isActive)
     .sort((a, b) => a.sortOrder - b.sortOrder);
 }
+
+/** All services, including inactive ones (old orders may still reference them). */
+export async function getAllServices(): Promise<Service[]> {
+  return [...services].sort((a, b) => a.sortOrder - b.sortOrder);
+}

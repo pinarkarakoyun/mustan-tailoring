@@ -92,5 +92,50 @@
   "NotFound": {
     "title": "Page not found",
     "text": "This page does not exist. Check the link or go back to the homepage."
+  },
+  "Status": {
+    "RECEIVED": "Received",
+    "IN_PROGRESS": "In progress",
+    "READY_FOR_PICKUP": "Ready for pickup",
+    "DELIVERED": "Picked up",
+    "CANCELLED": "Cancelled"
+  },
+  "Admin": {
+    "panelName": "Admin",
+    "logout": "Log out"
+  },
+  "AdminLogin": {
+    "title": "Log in",
+    "intro": "For shop staff only.",
+    "password": "Password",
+    "submit": "Log in",
+    "submitting": "Logging in…",
+    "wrongPassword": "The password is not correct. Please try again.",
+    "notConfigured": "Login is not set up yet. Add ADMIN_PASSWORD and AUTH_SECRET to .env.local."
+  },
+  "Dashboard": {
+    "title": "Overview",
+    "loading": "Loading orders…",
+    "attention": "Needs attention",
+    "attentionHint": "The ready date is today or has passed.",
+    "incomplete": "Complete the details",
+    "incompleteHint": "These orders are missing information.",
+    "ready": "Ready for pickup",
+    "inProgress": "In progress",
+    "recent": "Newest orders",
+    "empty": "No orders."
+  },
+  "OrderCard": {
+    "readyBy": "Ready on {date}",
+    "noDate": "No ready date",
+    "noService": "No service chosen",
+    "overdue": "Late",
+    "dueToday": "Ready today",
+    "missing": "Missing:"
+  },
+  "MissingField": {
+    "service": "Service",
+    "price": "Price",
+    "estimatedReadyDate": "Ready date"
   }
 }

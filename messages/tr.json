@@ -92,5 +92,50 @@
   "NotFound": {
     "title": "Sayfa bulunamadı",
     "text": "Bu sayfa mevcut değil. Linki kontrol edin veya ana sayfaya dönün."
+  },
+  "Status": {
+    "RECEIVED": "Alındı",
+    "IN_PROGRESS": "İşlemde",
+    "READY_FOR_PICKUP": "Teslime hazır",
+    "DELIVERED": "Teslim edildi",
+    "CANCELLED": "İptal edildi"
+  },
+  "Admin": {
+    "panelName": "Yönetim",
+    "logout": "Çıkış yap"
+  },
+  "AdminLogin": {
+    "title": "Giriş",
+    "intro": "Sadece dükkân çalışanları için.",
+    "password": "Şifre",
+    "submit": "Giriş yap",
+    "submitting": "Giriş yapılıyor…",
+    "wrongPassword": "Şifre yanlış. Tekrar deneyin.",
+    "notConfigured": "Giriş henüz ayarlanmadı. .env.local dosyasına ADMIN_PASSWORD ve AUTH_SECRET ekleyin."
+  },
+  "Dashboard": {
+    "title": "Genel bakış",
+    "loading": "Siparişler yükleniyor…",
+    "attention": "Dikkat gerekiyor",
+    "attentionHint": "Teslim tarihi bugün veya geçmiş.",
+    "incomplete": "Bilgileri tamamlayın",
+    "incompleteHint": "Bu siparişlerde eksik bilgi var.",
+    "ready": "Teslime hazır",
+    "inProgress": "İşlemde",
+    "recent": "En yeni siparişler",
+    "empty": "Sipariş yok."
+  },
+  "OrderCard": {
+    "readyBy": "Teslim: {date}",
+    "noDate": "Teslim tarihi yok",
+    "noService": "Hizmet seçilmedi",
+    "overdue": "Gecikti",
+    "dueToday": "Bugün teslim",
+    "missing": "Eksik:"
+  },
+  "MissingField": {
+    "service": "Hizmet",
+    "price": "Fiyat",
+    "estimatedReadyDate": "Teslim tarihi"
   }
 }

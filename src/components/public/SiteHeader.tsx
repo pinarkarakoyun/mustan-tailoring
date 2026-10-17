@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { shop } from "@/lib/shop";
-import { LanguageSwitcher } from "./LanguageSwitcher";
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { NavLink } from "./NavLink";
 
 export function SiteHeader() {
