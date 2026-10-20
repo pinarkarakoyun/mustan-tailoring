@@ -8,6 +8,7 @@ import { ServiceGrid } from "@/components/public/ServiceGrid";
 import { SocialLinks } from "@/components/public/SocialLinks";
 import { ButtonLink, ExternalButtonLink } from "@/components/ui/ButtonLink";
 import { initPageLocale } from "@/i18n/page-locale";
+import { isOrderTrackingEnabled } from "@/lib/features";
 import { getActiveServices, OTHER_SERVICE_ID } from "@/lib/services";
 import { shop, shopAddressLine, shopMapsUrl, shopWhatsAppUrl } from "@/lib/shop";
 import { siteImages } from "@/lib/site-images";
@@ -20,10 +21,19 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const t = await getTranslations("Home");
   const tCommon = await getTranslations("Common");
   const tContact = await getTranslations("Contact");
+  const tTrack = await getTranslations("Track");
   const services = (await getActiveServices())
     .filter((service) => service.id !== OTHER_SERVICE_ID)
     .slice(0, FEATURED_SERVICES);
   const years = shop.yearsOfExperience;
+  const trackingEnabled = isOrderTrackingEnabled();
+  const highlights = (
+    [
+      ["highlight1Title", "highlight1Text"],
+      ["highlight2Title", "highlight2Text"],
+      ["highlight3Title", "highlight3Text"],
+    ] as const
+  ).filter(([title]) => trackingEnabled || title !== "highlight3Title");
 
   return (
     <>
@@ -46,26 +56,32 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           </h1>
           <p className="max-w-xl text-lg text-background/90 sm:text-xl">{t("intro")}</p>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/track" variant="light">
-              {tCommon("trackOrder")}
-            </ButtonLink>
-            <ExternalButtonLink href={shopWhatsAppUrl()} target="_blank" rel="noopener noreferrer" variant="outlineLight">
+            {trackingEnabled && (
+              <ButtonLink href="/track" variant="light">
+                {tTrack("cta")}
+              </ButtonLink>
+            )}
+            {/* The only button when the order module is off: then it gets the filled style. */}
+            <ExternalButtonLink
+              href={shopWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              variant={trackingEnabled ? "outlineLight" : "light"}
+            >
               {tCommon("whatsappUs")}
             </ExternalButtonLink>
           </div>
         </div>
       </section>
 
-      {/* Three short reasons to choose the shop. */}
+      {/* Short reasons to choose the shop (the third one only with online tracking). */}
       <section className="border-b border-border bg-sand">
-        <ul className="mx-auto grid max-w-5xl gap-6 px-4 py-10 sm:grid-cols-3">
-          {(
-            [
-              ["highlight1Title", "highlight1Text"],
-              ["highlight2Title", "highlight2Text"],
-              ["highlight3Title", "highlight3Text"],
-            ] as const
-          ).map(([title, text]) => (
+        <ul
+          className={`mx-auto grid max-w-5xl gap-6 px-4 py-10 ${
+            trackingEnabled ? "sm:grid-cols-3" : "sm:grid-cols-2"
+          }`}
+        >
+          {highlights.map(([title, text]) => (
             <li key={title} className="reveal flex flex-col gap-1 border-l-2 border-accent pl-4">
               <p className="font-display text-2xl">{t(title, { years })}</p>
               <p className="text-muted">{t(text)}</p>
@@ -110,7 +126,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
       <section className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 py-20">
         <SectionHeading eyebrow={t("howItWorksEyebrow")} title={t("howItWorksTitle")} />
-        <HowItWorksSteps />
+        <HowItWorksSteps withTracking={trackingEnabled} />
       </section>
 
       <section className="bg-sand">

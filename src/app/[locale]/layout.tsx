@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { getClientMessages, PUBLIC_CLIENT_NAMESPACES } from "@/i18n/client-messages";
 import { initPageLocale } from "@/i18n/page-locale";
 import { routing } from "@/i18n/routing";
+import { isOrderTrackingEnabled } from "@/lib/features";
 import { shop } from "@/lib/shop";
 import { fontVariables } from "../fonts";
 import "../globals.css";
@@ -21,7 +22,10 @@ export async function generateMetadata({
 
   return {
     title: { default: shop.fullName, template: `%s | ${shop.fullName}` },
-    description: t("description"),
+    // "Track your order online" only when the order module is on.
+    description: isOrderTrackingEnabled()
+      ? `${t("description")} ${t("descriptionTracking")}`
+      : t("description"),
   };
 }
 

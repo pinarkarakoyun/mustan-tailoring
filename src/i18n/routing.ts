@@ -9,6 +9,9 @@ export const routing = defineRouting({
   // Always start in Dutch instead of guessing from browser settings,
   // so the shop staff and customers get a predictable experience.
   localeDetection: false,
+  // No language cookie: the language always comes from the URL, so a cookie would
+  // store something we never read. Fewer cookies = simpler privacy (no consent needed).
+  localeCookie: false,
 });
 
 export type Locale = (typeof routing.locales)[number];
