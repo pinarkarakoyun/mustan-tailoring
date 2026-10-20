@@ -1,7 +1,9 @@
 import { createHash, timingSafeEqual } from "node:crypto";
 import { cookies } from "next/headers";
+import { notFound } from "next/navigation";
 import { getLocale } from "next-intl/server";
 import { redirect } from "@/i18n/navigation";
+import { isOrderTrackingEnabled } from "./features";
 import {
   createSessionToken,
   SESSION_COOKIE,
@@ -58,6 +60,8 @@ export async function isSignedIn(): Promise<boolean> {
  * protects the data even if a page or server action is reached another way.
  */
 export async function requireAdmin(): Promise<void> {
+  // Server actions are reachable without a page: refuse them when the order module is off.
+  if (!isOrderTrackingEnabled()) notFound();
   if (!(await isSignedIn())) {
     redirect({ href: "/admin/login", locale: await getLocale() });
   }

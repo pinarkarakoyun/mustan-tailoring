@@ -1,6 +1,7 @@
 {
   "Metadata": {
-    "description": "Elbise tamiri ve tadilat atölyesi. Kıyafetlerinizi kısaltır, tadil eder ve tamir ederiz. Siparişinizi online takip edin."
+    "description": "Elbise tamiri ve tadilat atölyesi. Kıyafetlerinizi kısaltır, tadil eder ve tamir ederiz.",
+    "descriptionTracking": "Siparişinizi online takip edin."
   },
   "Nav": {
     "home": "Ana sayfa",
@@ -13,7 +14,6 @@
     "label": "Dil seçin"
   },
   "Common": {
-    "trackOrder": "Siparişinizi takip edin",
     "whatsappUs": "WhatsApp'tan yazın",
     "callUs": "Bizi arayın",
     "priceFrom": "Başlangıç fiyatı: {price}",
@@ -69,7 +69,11 @@
     "step3Text": "Durumu görmek için QR kodu telefonunuzla okutun. Bu zorunlu değildir.",
     "step4Title": "Teslim alın",
     "step4Text": "Hazır olduğunda size WhatsApp mesajı göndeririz. Dükkândan teslim alabilirsiniz.",
-    "eyebrow": "Nasıl çalışır"
+    "eyebrow": "Nasıl çalışır",
+    "introSimple": "Üç kolay adımda.",
+    "simpleStep2Text": "Size sipariş numaralı bir fiş veririz.",
+    "simpleStep3Title": "Hazır olunca teslim alın",
+    "simpleStep3Text": "Kıyafetiniz hazır olduğunda size haber veririz. Dükkândan teslim alabilirsiniz."
   },
   "Contact": {
     "title": "İletişim",
@@ -81,7 +85,7 @@
     "closed": "Kapalı",
     "hoursRange": "{open} – {close}",
     "eyebrow": "Bize uğrayın",
-    "intro": "Dükkânımıza her zaman bekleriz. Arayın, WhatsApp'tan yazın veya bizi sosyal medyada takip edin."
+    "intro": "Dükkânımıza her zaman bekleriz. Arayın, WhatsApp'tan yazın veya bizi sosyal medyada bulun."
   },
   "Days": {
     "mon": "Pazartesi",
@@ -93,6 +97,7 @@
     "sun": "Pazar"
   },
   "Track": {
+    "cta": "Siparişinizi takip edin",
     "title": "Siparişinizi takip edin",
     "intro": "Siparişinizi iki şekilde takip edebilirsiniz:",
     "optionQr": "Fişinizdeki QR kodu telefonunuzun kamerasıyla okutun.",
@@ -110,7 +115,16 @@
     "trackingTitle": "Takip sayfası",
     "trackingText": "Fişinizdeki link size özeldir ve tahmin edilmesi zordur. Takip sayfasında sadece adınız, sipariş numaranız ve durum görünür. Telefon numaranız orada asla görünmez.",
     "rightsTitle": "Haklarınız",
-    "rightsText": "Hakkınızda hangi bilgileri sakladığımızı her zaman sorabilir, düzeltilmesini veya silinmesini isteyebilirsiniz. Bunun için bize ulaşın."
+    "rightsText": "Hakkınızda hangi bilgileri sakladığımızı her zaman sorabilir, düzeltilmesini veya silinmesini isteyebilirsiniz. Bunun için bize ulaşın.",
+    "introSimple": "Bilgilerinizi özenle koruruz. Bu sitede hiçbir şey doldurmanız gerekmez.",
+    "simpleDataTitle": "Hangi bilgiler?",
+    "simpleDataText": "Bu site sizden kişisel bilgi istemez. Form yoktur ve hesap açmanız gerekmez.",
+    "simpleCookiesTitle": "Çerezler",
+    "simpleCookiesText": "Bu site çerez kullanmaz.",
+    "simpleLinksTitle": "Başka sitelere bağlantılar",
+    "simpleLinksText": "WhatsApp, Facebook, Instagram ve Google Haritalar butonları başka bir site veya uygulama açar. Orada o şirketin gizlilik kuralları geçerlidir.",
+    "simpleContactTitle": "Bize ulaşmak",
+    "simpleContactText": "Bizi ararsanız veya WhatsApp'tan yazarsanız bilgilerinizi sadece size yardım etmek için kullanırız. Bu bilgilerin silinmesini her zaman isteyebilirsiniz."
   },
   "NotFound": {
     "title": "Sayfa bulunamadı",
@@ -280,7 +294,7 @@
     "tracking": "Merhaba {name}, {shop} dükkânına verdiğiniz #{number} numaralı sipariş için teşekkür ederiz. Siparişinizin durumunu bu linkten görebilirsiniz:\n{link}\n\nSaygılarımızla,\n{shop}"
   },
   "Social": {
-    "title": "Bizi takip edin",
+    "title": "Bizi sosyal medyada bulun",
     "facebook": "Facebook",
     "instagram": "Instagram",
     "whatsapp": "WhatsApp"

@@ -1,6 +1,7 @@
 {
   "Metadata": {
-    "description": "Kledingreparatie en vermaakatelier. Wij korten, vermaken en repareren uw kleding. Volg uw bestelling online."
+    "description": "Kledingreparatie en vermaakatelier. Wij korten, vermaken en repareren uw kleding.",
+    "descriptionTracking": "Volg uw bestelling online."
   },
   "Nav": {
     "home": "Home",
@@ -13,7 +14,6 @@
     "label": "Kies een taal"
   },
   "Common": {
-    "trackOrder": "Volg uw bestelling",
     "whatsappUs": "Stuur een WhatsApp",
     "callUs": "Bel ons",
     "priceFrom": "Vanaf {price}",
@@ -69,7 +69,11 @@
     "step3Text": "Scan de QR-code met uw telefoon om te zien hoe het ervoor staat. Dit is niet verplicht.",
     "step4Title": "Ophalen",
     "step4Text": "Is het klaar? Dan sturen wij u een WhatsApp-bericht. U kunt het ophalen in de winkel.",
-    "eyebrow": "Zo werkt het"
+    "eyebrow": "Zo werkt het",
+    "introSimple": "In drie eenvoudige stappen.",
+    "simpleStep2Text": "U krijgt een bon met een bestelnummer.",
+    "simpleStep3Title": "Ophalen als het klaar is",
+    "simpleStep3Text": "Is uw kleding klaar? Dan laten wij het u weten. U haalt het op in de winkel."
   },
   "Contact": {
     "title": "Contact",
@@ -81,7 +85,7 @@
     "closed": "Gesloten",
     "hoursRange": "{open} – {close}",
     "eyebrow": "Kom langs",
-    "intro": "U bent van harte welkom in onze winkel. Bel, stuur een WhatsApp of volg ons online."
+    "intro": "U bent van harte welkom in onze winkel. Bel ons, stuur een WhatsApp of vind ons op sociale media."
   },
   "Days": {
     "mon": "Maandag",
@@ -93,6 +97,7 @@
     "sun": "Zondag"
   },
   "Track": {
+    "cta": "Volg uw bestelling",
     "title": "Volg uw bestelling",
     "intro": "U kunt uw bestelling op twee manieren volgen:",
     "optionQr": "Scan de QR-code op uw bon met de camera van uw telefoon.",
@@ -110,7 +115,16 @@
     "trackingTitle": "De volgpagina",
     "trackingText": "De link op uw bon is uniek en moeilijk te raden. Op de volgpagina staan alleen uw voornaam, uw bestelnummer en de status. Uw telefoonnummer is daar nooit zichtbaar.",
     "rightsTitle": "Uw rechten",
-    "rightsText": "U mag altijd vragen welke gegevens wij van u hebben, of vragen om ze aan te passen of te verwijderen. Neem hiervoor contact met ons op."
+    "rightsText": "U mag altijd vragen welke gegevens wij van u hebben, of vragen om ze aan te passen of te verwijderen. Neem hiervoor contact met ons op.",
+    "introSimple": "Wij gaan zorgvuldig om met uw gegevens. Op deze website hoeft u niets in te vullen.",
+    "simpleDataTitle": "Welke gegevens?",
+    "simpleDataText": "Deze website vraagt geen persoonsgegevens. Er zijn geen formulieren en u hoeft geen account te maken.",
+    "simpleCookiesTitle": "Cookies",
+    "simpleCookiesText": "Deze website plaatst geen cookies.",
+    "simpleLinksTitle": "Links naar andere websites",
+    "simpleLinksText": "De knoppen voor WhatsApp, Facebook, Instagram en Google Maps openen een andere website of app. Daar gelden de privacyregels van dat bedrijf.",
+    "simpleContactTitle": "Contact met ons",
+    "simpleContactText": "Belt u ons of stuurt u een WhatsApp-bericht? Dan gebruiken wij uw gegevens alleen om u te helpen. U mag ons altijd vragen om deze gegevens te verwijderen."
   },
   "NotFound": {
     "title": "Pagina niet gevonden",
@@ -280,7 +294,7 @@
     "tracking": "Hallo {name}, bedankt voor uw bestelling #{number} bij {shop}. Via deze link kunt u zien hoe het ervoor staat:\n{link}\n\nMet vriendelijke groet,\n{shop}"
   },
   "Social": {
-    "title": "Volg ons",
+    "title": "Vind ons op sociale media",
     "facebook": "Facebook",
     "instagram": "Instagram",
     "whatsapp": "WhatsApp"

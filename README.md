@@ -15,6 +15,14 @@ npm run dev                  # http://localhost:3000
 
 Generate `AUTH_SECRET` with `openssl rand -base64 32`.
 
+### Order module switch
+
+`ENABLE_ORDER_TRACKING=true` turns on the order module: admin panel (`/admin`), customer
+tracking (`/track`), QR codes and WhatsApp order messages. Any other value, or no value,
+turns it off: the site is then a plain business website, `/admin` and `/track` return 404,
+and the texts about tracking and the privacy sections about order data are hidden.
+Restart `npm run dev` (or build again) after changing it.
+
 ## Demo walkthrough
 
 1. **Public site**: `/` (Dutch), `/tr`, `/en`. Pages: home, services, how it works, contact, privacy.

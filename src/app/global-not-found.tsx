@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getLocale, getTranslations, setRequestLocale } from "next-intl/server";
 import { SiteFooter } from "@/components/public/SiteFooter";
 import { SiteHeader } from "@/components/public/SiteHeader";
 import { PageIntro } from "@/components/public/PageIntro";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { getClientMessages, PUBLIC_CLIENT_NAMESPACES } from "@/i18n/client-messages";
+import { NOT_FOUND_LOCALE_HEADER, parseNotFoundLocale } from "@/i18n/not-found-locale";
 import { fontVariables } from "./fonts";
 import "./globals.css";
 
@@ -20,7 +22,11 @@ export const instant = false;
 // Shown for URLs that match no page at all (e.g. /tr/abc).
 // It bypasses all layouts, so it renders its own <html> and site header.
 export default async function GlobalNotFound() {
-  // The language comes from the URL prefix, resolved by src/proxy.ts.
+  // A turned-off order module page (/tr/admin, /tr/track, ...) is sent here by
+  // src/proxy.ts with the language in a header. Otherwise the language comes from
+  // the URL prefix, resolved by the language routing.
+  const headerLocale = parseNotFoundLocale((await headers()).get(NOT_FOUND_LOCALE_HEADER));
+  if (headerLocale) setRequestLocale(headerLocale);
   const locale = await getLocale();
   const t = await getTranslations("NotFound");
   const tCommon = await getTranslations("Common");
