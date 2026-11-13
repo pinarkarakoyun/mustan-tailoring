@@ -85,7 +85,7 @@
     "closed": "Gesloten",
     "hoursRange": "{open} – {close}",
     "eyebrow": "Kom langs",
-    "intro": "U bent van harte welkom in onze winkel. Bel ons, stuur een WhatsApp of vind ons op sociale media."
+    "intro": "U bent van harte welkom in onze winkel. Bel ons of stuur een WhatsApp."
   },
   "Days": {
     "mon": "Maandag",
@@ -122,7 +122,7 @@
     "simpleCookiesTitle": "Cookies",
     "simpleCookiesText": "Deze website plaatst geen cookies.",
     "simpleLinksTitle": "Links naar andere websites",
-    "simpleLinksText": "De knoppen voor WhatsApp, Facebook, Instagram en Google Maps openen een andere website of app. Daar gelden de privacyregels van dat bedrijf.",
+    "simpleLinksText": "De knoppen voor WhatsApp en Google Maps openen een andere website of app. Daar gelden de privacyregels van dat bedrijf.",
     "simpleContactTitle": "Contact met ons",
     "simpleContactText": "Belt u ons of stuurt u een WhatsApp-bericht? Dan gebruiken wij uw gegevens alleen om u te helpen. U mag ons altijd vragen om deze gegevens te verwijderen."
   },
@@ -292,11 +292,5 @@
   "WhatsAppMessage": {
     "ready": "Hallo {name}, goed nieuws: uw bestelling #{number} is klaar! U kunt het ophalen bij {shop}, {address}.\n\nBekijk uw bestelling: {link}\n\nMet vriendelijke groet,\n{shop}",
     "tracking": "Hallo {name}, bedankt voor uw bestelling #{number} bij {shop}. Via deze link kunt u zien hoe het ervoor staat:\n{link}\n\nMet vriendelijke groet,\n{shop}"
-  },
-  "Social": {
-    "title": "Vind ons op sociale media",
-    "facebook": "Facebook",
-    "instagram": "Instagram",
-    "whatsapp": "WhatsApp"
   }
 }

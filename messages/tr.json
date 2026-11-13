@@ -85,7 +85,7 @@
     "closed": "Kapalı",
     "hoursRange": "{open} – {close}",
     "eyebrow": "Bize uğrayın",
-    "intro": "Dükkânımıza her zaman bekleriz. Arayın, WhatsApp'tan yazın veya bizi sosyal medyada bulun."
+    "intro": "Dükkânımıza her zaman bekleriz. Arayın veya WhatsApp'tan yazın."
   },
   "Days": {
     "mon": "Pazartesi",
@@ -122,7 +122,7 @@
     "simpleCookiesTitle": "Çerezler",
     "simpleCookiesText": "Bu site çerez kullanmaz.",
     "simpleLinksTitle": "Başka sitelere bağlantılar",
-    "simpleLinksText": "WhatsApp, Facebook, Instagram ve Google Haritalar butonları başka bir site veya uygulama açar. Orada o şirketin gizlilik kuralları geçerlidir.",
+    "simpleLinksText": "WhatsApp ve Google Haritalar butonları başka bir site veya uygulama açar. Orada o şirketin gizlilik kuralları geçerlidir.",
     "simpleContactTitle": "Bize ulaşmak",
     "simpleContactText": "Bizi ararsanız veya WhatsApp'tan yazarsanız bilgilerinizi sadece size yardım etmek için kullanırız. Bu bilgilerin silinmesini her zaman isteyebilirsiniz."
   },
@@ -292,11 +292,5 @@
   "WhatsAppMessage": {
     "ready": "Merhaba {name}, güzel haber: #{number} numaralı siparişiniz hazır! {shop} dükkânından teslim alabilirsiniz: {address}.\n\nSiparişinizi görün: {link}\n\nSaygılarımızla,\n{shop}",
     "tracking": "Merhaba {name}, {shop} dükkânına verdiğiniz #{number} numaralı sipariş için teşekkür ederiz. Siparişinizin durumunu bu linkten görebilirsiniz:\n{link}\n\nSaygılarımızla,\n{shop}"
-  },
-  "Social": {
-    "title": "Bizi sosyal medyada bulun",
-    "facebook": "Facebook",
-    "instagram": "Instagram",
-    "whatsapp": "WhatsApp"
   }
 }

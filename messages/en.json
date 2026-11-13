@@ -85,7 +85,7 @@
     "closed": "Closed",
     "hoursRange": "{open} – {close}",
     "eyebrow": "Visit us",
-    "intro": "You are always welcome in our shop. Call us, send a WhatsApp or find us on social media."
+    "intro": "You are always welcome in our shop. Call us or send a WhatsApp."
   },
   "Days": {
     "mon": "Monday",
@@ -122,7 +122,7 @@
     "simpleCookiesTitle": "Cookies",
     "simpleCookiesText": "This website does not use cookies.",
     "simpleLinksTitle": "Links to other websites",
-    "simpleLinksText": "The buttons for WhatsApp, Facebook, Instagram and Google Maps open another website or app. The privacy rules of that company apply there.",
+    "simpleLinksText": "The buttons for WhatsApp and Google Maps open another website or app. The privacy rules of that company apply there.",
     "simpleContactTitle": "Contacting us",
     "simpleContactText": "If you call us or send a WhatsApp message, we only use your details to help you. You can always ask us to delete them."
   },
@@ -292,11 +292,5 @@
   "WhatsAppMessage": {
     "ready": "Hello {name}, good news: your order #{number} is ready! You can pick it up at {shop}, {address}.\n\nView your order: {link}\n\nKind regards,\n{shop}",
     "tracking": "Hello {name}, thank you for your order #{number} at {shop}. You can follow its progress with this link:\n{link}\n\nKind regards,\n{shop}"
-  },
-  "Social": {
-    "title": "Find us on social media",
-    "facebook": "Facebook",
-    "instagram": "Instagram",
-    "whatsapp": "WhatsApp"
   }
 }

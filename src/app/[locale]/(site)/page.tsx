@@ -5,7 +5,6 @@ import { OpeningHoursList } from "@/components/public/OpeningHoursList";
 import { PartnerLogos } from "@/components/public/PartnerLogos";
 import { SectionHeading } from "@/components/public/SectionHeading";
 import { ServiceGrid } from "@/components/public/ServiceGrid";
-import { SocialLinks } from "@/components/public/SocialLinks";
 import { ButtonLink, ExternalButtonLink } from "@/components/ui/ButtonLink";
 import { initPageLocale } from "@/i18n/page-locale";
 import { isOrderTrackingEnabled } from "@/lib/features";
@@ -149,13 +148,15 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             <br />
             {shopAddressLine()}
           </p>
-          <div className="flex flex-col gap-3 sm:flex-row">
+          <div className="flex flex-col flex-wrap gap-3 sm:flex-row">
             <ExternalButtonLink href={`tel:${shop.phone}`}>{tCommon("callUs")}</ExternalButtonLink>
+            <ExternalButtonLink href={shopWhatsAppUrl()} target="_blank" rel="noopener noreferrer" variant="secondary">
+              {tCommon("whatsappUs")}
+            </ExternalButtonLink>
             <ExternalButtonLink href={shopMapsUrl()} target="_blank" rel="noopener noreferrer" variant="secondary">
               {tContact("openInMaps")}
             </ExternalButtonLink>
           </div>
-          <SocialLinks withLabels />
         </div>
         <div className="reveal rounded-2xl bg-surface p-6 ring-1 ring-border">
           <h3 className="mb-3 font-display text-2xl">{tContact("openingHours")}</h3>
