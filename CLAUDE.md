@@ -17,7 +17,7 @@ Act as a senior full-stack engineer and mentor. Don't blindly implement requests
 ## Tech stack (decided)
 - Next.js (App Router) + TypeScript + Tailwind CSS
 - Prototype phase: **mock data only**. Keep all data access in one place (`src/lib/orders.ts` or similar) so it can later be replaced with a real database (Supabase/PostgreSQL) without changing the UI.
-- Use a lightweight i18n solution. All user-facing text in central translation files (Dutch, Turkish, English). Dutch is default for the public site.
+- Use a lightweight i18n solution. All user-facing text in central translation files. Public website and everything customers receive (tracking page, WhatsApp messages): Dutch and English (Dutch is default). Admin panel: Dutch, Turkish, English.
 - Do not add other libraries, services or infrastructure unless needed and explained.
 
 ## Principles

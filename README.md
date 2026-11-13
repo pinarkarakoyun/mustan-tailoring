@@ -25,11 +25,11 @@ Restart `npm run dev` (or build again) after changing it.
 
 ## Demo walkthrough
 
-1. **Public site**: `/` (Dutch), `/tr`, `/en`. Pages: home, services, how it works, contact, privacy.
-2. **Admin login**: `/admin` → password from `ADMIN_PASSWORD`.
+1. **Public site**: `/` (Dutch), `/en`. (Turkish is admin-only: old `/tr/...` site links redirect to Dutch.) Pages: home, services, how it works, contact, privacy.
+2. **Admin login**: `/admin` (Turkish: `/tr/admin`) → password from `ADMIN_PASSWORD`.
 3. **Dashboard**: orders that need attention, are incomplete, ready for pickup, in progress, newest.
 4. **New order**: "+ Nieuwe bestelling" → only name and phone are required.
-5. **Order detail**: status buttons, WhatsApp message (in the customer's language), QR code and tracking link, edit page.
+5. **Order detail**: status buttons, WhatsApp message (in the customer's language: Dutch or English), QR code and tracking link, edit page.
 6. **Customer tracking**: open the QR code / link → `/track/<token>` (no login, no private data).
 
 To scan a QR code with a phone in development, open the admin on the computer's network
@@ -38,7 +38,7 @@ address (e.g. `http://192.168.1.15:3000/admin`, shown when `npm run dev` starts)
 ## Project structure
 
 ```
-messages/            Translations (nl = reference, tr, en)
+messages/            Translations (nl = reference, en, tr = admin panel only)
 src/app/[locale]/    Pages; (site) = public website, admin = admin panel
 src/components/      UI building blocks (ui = shared, public, admin)
 src/i18n/            Language routing, formats, client message selection

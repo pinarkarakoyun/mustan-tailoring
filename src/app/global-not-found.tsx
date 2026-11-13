@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 // known from the requested URL. Fine for a small, rarely visited page.
 export const instant = false;
 
-// Shown for URLs that match no page at all (e.g. /tr/abc).
+// Shown for URLs that match no page at all (e.g. /en/abc).
 // It bypasses all layouts, so it renders its own <html> and site header.
 export default async function GlobalNotFound() {
   // A turned-off order module page (/tr/admin, /tr/track, ...) is sent here by

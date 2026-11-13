@@ -21,7 +21,7 @@ This project replaces or complements the paper workflow with:
 Must be able to: create an order in seconds, complete details later, search/filter orders, change status, generate a QR/tracking link, prepare a WhatsApp message, see simple statistics.
 
 ### 2.2 Customer (public, no account)
-Must be able to: open the tracking page via QR code or secure link and see the order number, status, status timeline, estimated completion date and pickup info. Nothing else.
+Must be able to: open the tracking page (Dutch or English) via QR code or secure link and see the order number, status, status timeline, estimated completion date and pickup info. Nothing else.
 
 ## 3. Current workflow (as-is)
 1. Customer brings clothing and explains the work.
@@ -87,9 +87,10 @@ Orders created quickly may miss important fields (service, price, estimated date
 - Treat customer data under GDPR (AVG in the Netherlands): collect only what is needed, include a short privacy page, restrict database access.
 
 ## 9. Languages
-Supported: Dutch (default for the public website), Turkish, English.
+- **Public website** (including the tracking page): Dutch (default) and English.
+- **Admin panel:** Dutch, Turkish, English (the owner picks).
+- **Customer language** (per order, for WhatsApp messages and the tracking link): Dutch or English.
 - All user-facing text lives in central translation files, never hard-coded in components.
-- Prototype: Dutch and Turkish fully translated; English can follow later (structure must already support it).
 - Dutch texts must be reviewed by a native/fluent Dutch speaker before the real launch.
 
 ## 10. Public website

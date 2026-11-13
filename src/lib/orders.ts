@@ -1,6 +1,6 @@
 import { randomUUID } from "node:crypto";
 import { connection } from "next/server";
-import type { Locale } from "@/i18n/routing";
+import type { PublicLocale } from "@/i18n/routing";
 import type { Order, OrderStatus, PublicOrder, StatusChange } from "@/types/order";
 import { createSeedData } from "./mock-data";
 import { generateTrackingToken } from "./token";
@@ -87,7 +87,7 @@ export type NewOrderInput = {
   customerName: string;
   /** Already validated and normalized (E.164). */
   customerPhone: string;
-  customerLanguage: Locale;
+  customerLanguage: PublicLocale;
 };
 
 /** Creates an order with only the required fields. Everything else can be added later. */

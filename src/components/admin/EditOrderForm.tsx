@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/Input";
 import { SubmitButton } from "@/components/ui/SubmitButton";
 import { Textarea } from "@/components/ui/Textarea";
 import { localeNames } from "@/i18n/locale-names";
-import { routing } from "@/i18n/routing";
+import { publicLocales } from "@/i18n/routing";
 import { LIMITS } from "@/lib/order-limits";
 
 type FormValues = NonNullable<EditOrderState["values"]>;
@@ -84,8 +84,8 @@ export function EditOrderForm({ orderId, initialValues, services }: EditOrderFor
           />
         </Field>
 
-        <ChoiceGroup legend={tNew("language")} columns={3}>
-          {routing.locales.map((locale) => (
+        <ChoiceGroup legend={tNew("language")} columns={2}>
+          {publicLocales.map((locale) => (
             <Choice
               key={locale}
               name="language"
