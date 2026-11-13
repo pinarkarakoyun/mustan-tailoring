@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { NavLink } from "@/components/ui/NavLink";
 import { Link } from "@/i18n/navigation";
+import { publicLocales } from "@/i18n/routing";
 import { ShopLogo } from "./ShopLogo";
 
 export function SiteHeader() {
@@ -17,7 +18,7 @@ export function SiteHeader() {
             <ShopLogo />
           </Link>
           <div className="lg:hidden">
-            <LanguageSwitcher />
+            <LanguageSwitcher locales={publicLocales} />
           </div>
         </div>
 
@@ -40,7 +41,7 @@ export function SiteHeader() {
             </ul>
           </nav>
           <div className="hidden lg:block">
-            <LanguageSwitcher />
+            <LanguageSwitcher locales={publicLocales} />
           </div>
         </div>
       </div>

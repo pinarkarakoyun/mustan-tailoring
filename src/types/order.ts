@@ -1,4 +1,4 @@
-import type { Locale } from "@/i18n/routing";
+import type { PublicLocale } from "@/i18n/routing";
 
 /** The only allowed statuses, in their normal order. */
 export const ORDER_STATUSES = [
@@ -23,8 +23,8 @@ export type Order = {
   customerName: string;
   /** International (E.164) format, e.g. "+31612345678". */
   customerPhone: string;
-  /** Language for WhatsApp messages and the tracking link. */
-  customerLanguage: Locale;
+  /** Language for WhatsApp messages and the tracking link (Dutch or English). */
+  customerLanguage: PublicLocale;
 
   // Optional, can be filled in later
   serviceId: string | null;

@@ -1,4 +1,4 @@
-import type { Locale } from "@/i18n/routing";
+import type { PublicLocale } from "@/i18n/routing";
 import type { Order, OrderStatus, StatusChange } from "@/types/order";
 import { todayInShop } from "./order-utils";
 
@@ -13,7 +13,7 @@ type SeedOrder = {
   trackingToken: string;
   customerName: string;
   customerPhone: string;
-  customerLanguage: Locale;
+  customerLanguage: PublicLocale;
   serviceId?: string;
   clothingType?: string;
   publicDescription?: string;
@@ -52,7 +52,7 @@ const seedOrders: SeedOrder[] = [
     trackingToken: "demo-Hs8dN2qW6eR4tY9uI3oP7aS1",
     customerName: "Ayşe Yılmaz",
     customerPhone: "+905550000002",
-    customerLanguage: "tr",
+    customerLanguage: "nl",
     serviceId: "zipper-replacement",
     clothingType: "Jas",
     internalNote: "Klant heeft afgezegd.",
@@ -82,7 +82,7 @@ const seedOrders: SeedOrder[] = [
     trackingToken: "demo-Wp3eR5tY7uI9oA2sD4fG6hJ8",
     customerName: "Mehmet Kaya",
     customerPhone: "+31612340004",
-    customerLanguage: "tr",
+    customerLanguage: "en",
     serviceId: "sleeve-shortening",
     clothingType: "Overhemd",
     publicDescription: "Mouwen inkorten",
@@ -115,7 +115,7 @@ const seedOrders: SeedOrder[] = [
     trackingToken: "demo-Lm4nB6vC8xZ1aS3dF5gH7jK9",
     customerName: "Fatma Demir",
     customerPhone: "+31612340006",
-    customerLanguage: "tr",
+    customerLanguage: "nl",
     serviceId: "general-repair",
     clothingType: "Jurk",
     publicDescription: "Naad repareren",
@@ -158,7 +158,7 @@ const seedOrders: SeedOrder[] = [
     trackingToken: "demo-Yb6nM8qW1eR3tY5uI7oP9aS2",
     customerName: "Zeynep Arslan",
     customerPhone: "+905550000009",
-    customerLanguage: "tr",
+    customerLanguage: "en",
     createdHoursAgo: 3,
   },
   {

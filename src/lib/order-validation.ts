@@ -1,5 +1,4 @@
-import { hasLocale } from "next-intl";
-import { routing, type Locale } from "@/i18n/routing";
+import { isPublicLocale, type PublicLocale } from "@/i18n/routing";
 import { LIMITS } from "./order-limits";
 import { normalizePhone } from "./phone";
 
@@ -26,8 +25,8 @@ export function validatePhone(input: string): Result<string, "phoneRequired" | "
 }
 
 /** Unknown values fall back to Dutch instead of failing: it is not worth an error message. */
-export function parseLanguage(input: string): Locale {
-  return hasLocale(routing.locales, input) ? input : routing.defaultLocale;
+export function parseLanguage(input: string): PublicLocale {
+  return isPublicLocale(input) ? input : "nl";
 }
 
 /** Optional text: empty becomes null. */

@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { localeNames } from "@/i18n/locale-names";
-import { routing } from "@/i18n/routing";
+import { publicLocales, routing } from "@/i18n/routing";
 import { LIMITS } from "@/lib/order-limits";
 
 const initialState: NewOrderState = {
@@ -68,8 +68,8 @@ export function NewOrderForm() {
 
       <fieldset className="flex flex-col gap-2">
         <legend className="mb-2 text-lg font-semibold">{t("language")}</legend>
-        <div className="grid grid-cols-3 gap-2">
-          {routing.locales.map((locale) => (
+        <div className="grid grid-cols-2 gap-2">
+          {publicLocales.map((locale) => (
             <label key={locale} className="cursor-pointer">
               {/* Real radio buttons (keyboard and screen reader friendly), styled as big buttons. */}
               <input
