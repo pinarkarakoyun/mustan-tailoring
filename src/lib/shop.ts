@@ -1,7 +1,6 @@
 // Business information shown on the public site.
 // Address and phone come from the current website (kledingreparatie-mustan.nl).
 // Opening hours confirmed by the owner (also shown on the shop window).
-// TODO (owner): confirm the WhatsApp number.
 
 export type Weekday = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
 
@@ -26,8 +25,8 @@ export const shop = {
   phoneDisplay: "050 313 0801",
   /** Phone in international format, used for tel: links. */
   phone: "+31503130801",
-  /** WhatsApp number in international format. DEMO VALUE until the owner confirms it. */
-  whatsapp: "+31612345678",
+  /** WhatsApp number (the owner's mobile) in international format. */
+  whatsapp: "+31642198677",
   openingHours: [
     { day: "mon", hours: { open: "10:00", close: "18:00" } },
     { day: "tue", hours: { open: "10:00", close: "18:00" } },
