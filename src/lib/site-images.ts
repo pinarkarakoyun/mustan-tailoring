@@ -13,9 +13,9 @@ import trouserHem from "@/assets/images/service-trouser-hem.jpg";
 import waistAdjustment from "@/assets/images/service-waist-adjustment.jpg";
 import zipperReplacement from "@/assets/images/service-zipper-replacement.jpg";
 
-// All photos of the public site in one place. They are temporary stock photos
-// (see src/assets/images/CREDITS.md): replace a file with the owner's photo
-// using the same name, and the site uses it automatically.
+// All photos of the public site in one place. Some are the shop's own photos,
+// the rest are temporary stock photos (see src/assets/images/CREDITS.md).
+// Replace a file with a new photo using the same name, and the site uses it automatically.
 // Static imports let Next.js resize the photos and show a blurred preview while loading.
 
 export const siteImages = { hero, about, contact };

@@ -1,6 +1,7 @@
 // Business information shown on the public site.
 // Address and phone come from the current website (kledingreparatie-mustan.nl).
-// TODO (owner): confirm WhatsApp number, opening hours and the social media links.
+// Opening hours confirmed by the owner (also shown on the shop window).
+// TODO (owner): confirm WhatsApp number and the social media links.
 
 export type Weekday = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
 
@@ -32,13 +33,13 @@ export const shop = {
     facebook: "https://www.facebook.com/",
     instagram: "https://www.instagram.com/",
   },
-  // DEMO VALUES: confirm with the owner.
   openingHours: [
-    { day: "mon", hours: null },
-    { day: "tue", hours: { open: "09:00", close: "18:00" } },
-    { day: "wed", hours: { open: "09:00", close: "18:00" } },
-    { day: "thu", hours: { open: "09:00", close: "18:00" } },
-    { day: "fri", hours: { open: "09:00", close: "18:00" } },
+    { day: "mon", hours: { open: "10:00", close: "18:00" } },
+    { day: "tue", hours: { open: "10:00", close: "18:00" } },
+    { day: "wed", hours: { open: "10:00", close: "18:00" } },
+    // Thursday: late shopping evening (koopavond).
+    { day: "thu", hours: { open: "10:00", close: "20:00" } },
+    { day: "fri", hours: { open: "10:00", close: "18:00" } },
     { day: "sat", hours: { open: "10:00", close: "17:00" } },
     { day: "sun", hours: null },
   ] satisfies OpeningHours[],
