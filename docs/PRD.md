@@ -97,7 +97,7 @@ Orders created quickly may miss important fields (service, price, estimated date
 - **Home:** short introduction, main services, call to action, "Track your order" button, contact info.
 - **Services:** service list (prices as "from" prices once confirmed).
 - **How it works:** 1) bring clothing, 2) we register your order, 3) track online, 4) pick up when ready.
-- **Contact:** address, phone, opening hours, map link, WhatsApp, Facebook and Instagram buttons. No email address.
+- **Contact:** address, phone, opening hours, map link, WhatsApp button. No email address, no social media links.
 - **Business partners:** logos of the shops the owner works with, each linking to that shop's website.
 - **Look and feel:** close to the existing site (kledingreparatie-mustan.nl): large photos, Vidaloka headings (like the shop sign), elegant palette. Stock photos until the owner provides his own.
 - Language switcher.

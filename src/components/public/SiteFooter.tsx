@@ -1,24 +1,20 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { shop, shopAddressLine, shopMapsUrl } from "@/lib/shop";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
+import { shop, shopAddressLine, shopMapsUrl, shopWhatsAppUrl } from "@/lib/shop";
 import { ShopLogo } from "./ShopLogo";
-import { SocialLinks } from "./SocialLinks";
 
 export function SiteFooter() {
   const t = useTranslations("Footer");
   const tNav = useTranslations("Nav");
   const tContact = useTranslations("Contact");
-  const tSocial = useTranslations("Social");
+  const tCommon = useTranslations("Common");
 
   return (
     <footer className="mt-auto bg-primary text-background">
       <div className="mx-auto grid max-w-5xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-3">
         <div className="flex flex-col gap-5">
           <ShopLogo inverted />
-          <div className="flex flex-col gap-3">
-            <p className="font-semibold">{tSocial("title")}</p>
-            <SocialLinks tone="dark" />
-          </div>
         </div>
 
         <div className="flex flex-col gap-2">
@@ -29,6 +25,15 @@ export function SiteFooter() {
           </a>
           <a href={`tel:${shop.phone}`} className="mt-2 text-lg font-semibold">
             {shop.phoneDisplay}
+          </a>
+          <a
+            href={shopWhatsAppUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex min-h-11 items-center gap-2 font-semibold hover:text-accent"
+          >
+            <WhatsAppIcon className="size-5" />
+            {tCommon("whatsappUs")}
           </a>
         </div>
 

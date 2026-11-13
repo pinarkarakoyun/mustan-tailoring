@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { OpeningHoursList } from "@/components/public/OpeningHoursList";
 import { PageHero } from "@/components/public/PageHero";
-import { SocialLinks } from "@/components/public/SocialLinks";
 import { ExternalButtonLink } from "@/components/ui/ButtonLink";
 import { initPageLocale } from "@/i18n/page-locale";
 import { shop, shopAddressLine, shopMapsUrl, shopWhatsAppUrl } from "@/lib/shop";
@@ -22,7 +21,6 @@ export default async function ContactPage({
   await initPageLocale(params);
   const t = await getTranslations("Contact");
   const tCommon = await getTranslations("Common");
-  const tSocial = await getTranslations("Social");
 
   return (
     <>
@@ -60,11 +58,6 @@ export default async function ContactPage({
               </dd>
             </div>
           </dl>
-
-          <section className="flex flex-col gap-3">
-            <h2 className="text-2xl">{tSocial("title")}</h2>
-            <SocialLinks withLabels />
-          </section>
         </div>
 
         <section className="reveal self-start rounded-2xl bg-surface p-6 ring-1 ring-border sm:p-8">

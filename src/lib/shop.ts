@@ -1,6 +1,6 @@
 // Business information shown on the public site.
 // Address and phone come from the current website (kledingreparatie-mustan.nl).
-// TODO (owner): confirm WhatsApp number, opening hours and the social media links.
+// Opening hours confirmed by the owner (also shown on the shop window).
 
 export type Weekday = "mon" | "tue" | "wed" | "thu" | "fri" | "sat" | "sun";
 
@@ -25,20 +25,15 @@ export const shop = {
   phoneDisplay: "050 313 0801",
   /** Phone in international format, used for tel: links. */
   phone: "+31503130801",
-  /** WhatsApp number in international format. DEMO VALUE until the owner confirms it. */
-  whatsapp: "+31612345678",
-  /** Social media pages. Placeholders until the owner sends the real links. */
-  social: {
-    facebook: "https://www.facebook.com/",
-    instagram: "https://www.instagram.com/",
-  },
-  // DEMO VALUES: confirm with the owner.
+  /** WhatsApp number (the owner's mobile) in international format. */
+  whatsapp: "+31642198677",
   openingHours: [
-    { day: "mon", hours: null },
-    { day: "tue", hours: { open: "09:00", close: "18:00" } },
-    { day: "wed", hours: { open: "09:00", close: "18:00" } },
-    { day: "thu", hours: { open: "09:00", close: "18:00" } },
-    { day: "fri", hours: { open: "09:00", close: "18:00" } },
+    { day: "mon", hours: { open: "10:00", close: "18:00" } },
+    { day: "tue", hours: { open: "10:00", close: "18:00" } },
+    { day: "wed", hours: { open: "10:00", close: "18:00" } },
+    // Thursday: late shopping evening (koopavond).
+    { day: "thu", hours: { open: "10:00", close: "20:00" } },
+    { day: "fri", hours: { open: "10:00", close: "18:00" } },
     { day: "sat", hours: { open: "10:00", close: "17:00" } },
     { day: "sun", hours: null },
   ] satisfies OpeningHours[],
